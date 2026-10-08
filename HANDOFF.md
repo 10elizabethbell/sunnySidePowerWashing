@@ -1,6 +1,6 @@
 # Sunny Side Power Washing — handoff at ~60%
 
-**Live file:** index.html · **Repo:** https://github.com/10elizabethbell/sunnySidePowerWashing · **Built:** 2026-10-08 from Muse brief (run 2026-10-08, found via the "NJ CONTRACTORS, BUILDERS & GC's" Facebook group flyer)
+**Live file:** index.html · **Live site:** https://10elizabethbell.github.io/sunnySidePowerWashing/ · **Repo:** https://github.com/10elizabethbell/sunnySidePowerWashing · **Built:** 2026-10-08 from Muse brief (run 2026-10-08, found via the "NJ CONTRACTORS, BUILDERS & GC's" Facebook group flyer)
 
 ## What's built
 - **World:** their own mascot (a sun in sunglasses holding a pressure-wash wand) shining over live water. Sky-navy ground (never black), their wordmark gold `#F9BF00`.
