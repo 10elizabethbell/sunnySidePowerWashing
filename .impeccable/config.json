@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-08T13:50:57.230Z",
+        "reason": "Claude: imgs are lazy-loaded; src is assigned at runtime from <script type=text/plain id=img-*> data blocks (pitch-site build-notes single-file weight recipe)"
+      }
+    ]
+  }
+}
