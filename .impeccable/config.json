@@ -83,6 +83,36 @@
         "value": "rgba(255,255,255,.95)",
         "createdAt": "2026-10-08T14:06:49.946Z",
         "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1rem",
+        "createdAt": "2026-10-08T23:20:47.949Z",
+        "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".9375rem",
+        "createdAt": "2026-10-08T23:20:48.025Z",
+        "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.1rem",
+        "createdAt": "2026-10-08T23:20:48.098Z",
+        "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.125rem",
+        "createdAt": "2026-10-08T23:20:48.170Z",
+        "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".8125rem",
+        "createdAt": "2026-10-08T23:20:48.244Z",
+        "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
       }
     ]
   }
