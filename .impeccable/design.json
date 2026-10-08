@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T14:05:53+00:00",
+  "title": "Design System: Sunny Side Power Washing",
+  "extensions": {
+    "colorMeta": {
+      "sky-deep": {
+        "role": "secondary",
+        "displayName": "Sky Deep",
+        "canonical": "#0a2c52",
+        "tonalRamp": [
+          "#000925",
+          "#022449",
+          "#1f4168",
+          "#3d5f89",
+          "#5f83af",
+          "#82a8d6",
+          "#a7cefe",
+          "#e5f0fe"
+        ],
+        "cssVar": "--sky-950"
+      },
+      "sky-navy": {
+        "role": "secondary",
+        "displayName": "Sky Navy",
+        "canonical": "#0d3b6e",
+        "tonalRamp": [
+          "#000926",
+          "#00234e",
+          "#134073",
+          "#335f95",
+          "#5583bb",
+          "#78a8e3",
+          "#aacefa",
+          "#e4f0fe"
+        ],
+        "cssVar": "--sky-900"
+      },
+      "sky-blue": {
+        "role": "secondary",
+        "displayName": "Sky Blue",
+        "canonical": "#1d5fa3",
+        "tonalRamp": [
+          "#000a24",
+          "#00244b",
+          "#00407a",
+          "#1d5fa3",
+          "#4383ca",
+          "#68a8f2",
+          "#a8cefb",
+          "#e4f0fe"
+        ],
+        "cssVar": "--sky-700"
+      },
+      "sky-glow": {
+        "role": "secondary",
+        "displayName": "Sky Glow",
+        "canonical": "#2a6db4",
+        "tonalRamp": [
+          "#000a24",
+          "#012448",
+          "#094075",
+          "#195fa4",
+          "#4183cb",
+          "#65a8f4",
+          "#a7cefc",
+          "#e3f0ff"
+        ],
+        "note": "hard-coded value, not a :root custom property"
+      },
+      "water-deep": {
+        "role": "tertiary",
+        "displayName": "Water Deep",
+        "canonical": "#1a62ad",
+        "tonalRamp": [
+          "#000926",
+          "#00244a",
+          "#053f78",
+          "#145ea8",
+          "#3d82d0",
+          "#63a8f8",
+          "#a6ceff",
+          "#e4f0fe"
+        ],
+        "cssVar": "--water-600"
+      },
+      "water": {
+        "role": "tertiary",
+        "displayName": "Water",
+        "canonical": "#2a8fd6",
+        "tonalRamp": [
+          "#000c1e",
+          "#002642",
+          "#01436c",
+          "#116298",
+          "#1e87cd",
+          "#4cacf5",
+          "#9dd1fd",
+          "#e2f1fd"
+        ],
+        "cssVar": "--water-500"
+      },
+      "spray": {
+        "role": "tertiary",
+        "displayName": "Spray",
+        "canonical": "#57c3f2",
+        "tonalRamp": [
+          "#000e18",
+          "#002838",
+          "#07465d",
+          "#006789",
+          "#028cb9",
+          "#44b2e0",
+          "#85d7fd",
+          "#ddf2fd"
+        ],
+        "cssVar": "--water-300"
+      },
+      "water-pale": {
+        "role": "tertiary",
+        "displayName": "Water Pale",
+        "canonical": "#dff1fc",
+        "tonalRamp": [
+          "#020d14",
+          "#18262e",
+          "#33424b",
+          "#516069",
+          "#73838d",
+          "#97a7b2",
+          "#bcced8",
+          "#e0f2fd"
+        ],
+        "cssVar": "--water-100"
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#eef6fc",
+        "tonalRamp": [
+          "#070c10",
+          "#1f2529",
+          "#3a4145",
+          "#585f64",
+          "#7a8187",
+          "#9ea6ab",
+          "#c4ccd1",
+          "#e8f0f6"
+        ],
+        "cssVar": "--mist"
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "#fbf6e9",
+        "tonalRamp": [
+          "#0e0b04",
+          "#27241a",
+          "#433f35",
+          "#625d52",
+          "#848074",
+          "#a9a498",
+          "#cfcabe",
+          "#f3eee1"
+        ],
+        "cssVar": "--cream"
+      },
+      "sunny-gold": {
+        "role": "primary",
+        "displayName": "Sunny Gold",
+        "canonical": "#f9bf00",
+        "tonalRamp": [
+          "#130900",
+          "#2f2200",
+          "#513c04",
+          "#745912",
+          "#9d7b1f",
+          "#ca9d23",
+          "#fbc10a",
+          "#feedc6"
+        ],
+        "cssVar": "--gold"
+      },
+      "sunny-gold-hover": {
+        "role": "primary",
+        "displayName": "Gold Hover",
+        "canonical": "#ffcb1f",
+        "tonalRamp": [
+          "#120900",
+          "#2e2200",
+          "#4f3d03",
+          "#725a11",
+          "#9b7c1e",
+          "#c79f21",
+          "#f7c303",
+          "#ffedc1"
+        ],
+        "note": "hard-coded value, not a :root custom property"
+      },
+      "gold-pale": {
+        "role": "primary",
+        "displayName": "Pale Gold",
+        "canonical": "#fff1bf",
+        "tonalRamp": [
+          "#110a00",
+          "#2c2300",
+          "#4b3f0f",
+          "#6a5d30",
+          "#8d8052",
+          "#b2a475",
+          "#d8cb9a",
+          "#fdefbd"
+        ],
+        "cssVar": "--gold-100"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#10233d",
+        "tonalRamp": [
+          "#000a22",
+          "#11243e",
+          "#2c415d",
+          "#495f7d",
+          "#6b82a2",
+          "#8fa6c8",
+          "#b4cdef",
+          "#e5f0ff"
+        ],
+        "cssVar": "--ink"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#34496a",
+        "tonalRamp": [
+          "#000924",
+          "#102442",
+          "#2b4060",
+          "#485e81",
+          "#6a81a6",
+          "#8ea6cc",
+          "#b3ccf4",
+          "#e5efff"
+        ],
+        "cssVar": "--ink-2"
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On Dark",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ],
+        "cssVar": "--on-dark"
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "On Dark Soft",
+        "canonical": "#c9def3",
+        "tonalRamp": [
+          "#010c1a",
+          "#152535",
+          "#304252",
+          "#4e6072",
+          "#6f8396",
+          "#93a7bb",
+          "#b9cde2",
+          "#e2f0fe"
+        ],
+        "cssVar": "--on-dark-2"
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#5b6f8c",
+        "tonalRamp": [
+          "#000a20",
+          "#13243d",
+          "#2e405b",
+          "#4b5f7b",
+          "#6d829f",
+          "#91a6c5",
+          "#b6cced",
+          "#e5effe"
+        ],
+        "note": "hard-coded value, not a :root custom property"
+      },
+      "error-text": {
+        "role": "error",
+        "displayName": "Error Text",
+        "canonical": "#a3261b",
+        "tonalRamp": [
+          "#210000",
+          "#4b0000",
+          "#7b0703",
+          "#a6291e",
+          "#cf5142",
+          "#fa7766",
+          "#feb6aa",
+          "#ffe9e5"
+        ],
+        "note": "hard-coded value, not a :root custom property"
+      },
+      "error-border": {
+        "role": "error",
+        "displayName": "Error Border",
+        "canonical": "#c2382b",
+        "tonalRamp": [
+          "#230000",
+          "#4b0101",
+          "#7a0b06",
+          "#ab1e15",
+          "#d54b3c",
+          "#f87968",
+          "#fdb6ab",
+          "#fee9e5"
+        ],
+        "note": "hard-coded value, not a :root custom property"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero benefit headline only; uppercase 900, <em> in gold."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s; close h2 runs larger at clamp(2.1rem,9vw,4.25rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service group and pillar headings, uppercase."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero pitch line, 36ch max, 20px cap."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All paragraphs; intros capped 44-46ch."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Every .btn; sentence case."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Before / After tags only; uppercase."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 10px 24px -10px rgba(13,59,110,.45)",
+        "purpose": "--shadow-1; message-ready panel."
+      },
+      {
+        "name": "float",
+        "value": "0 22px 48px -18px rgba(10,44,82,.55)",
+        "purpose": "--shadow-2; before/after frames, review card."
+      },
+      {
+        "name": "gold-glow",
+        "value": "0 10px 22px -10px rgba(249,191,0,.75)",
+        "purpose": "Gold buttons."
+      },
+      {
+        "name": "bubble",
+        "value": "0 18px 36px -14px rgba(13,59,110,.5)",
+        "purpose": "Photo bubbles."
+      },
+      {
+        "name": "knob",
+        "value": "0 8px 18px -6px rgba(10,44,82,.6)",
+        "purpose": "Before/after knob."
+      },
+      {
+        "name": "cue",
+        "value": "0 4px 10px -4px rgba(13,59,110,.4)",
+        "purpose": "Service-row cue discs."
+      },
+      {
+        "name": "bar",
+        "value": "0 -10px 24px -12px rgba(0,0,0,.45)",
+        "purpose": "Sticky bar, cast upward."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-spring",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "Button press, cue spin, sticky bar slide."
+      },
+      {
+        "name": "state",
+        "value": ".2s",
+        "purpose": "Color/background/transform transitions on buttons, chips, rows."
+      },
+      {
+        "name": "bar-slide",
+        "value": ".35s",
+        "purpose": "Sticky bar in/out."
+      },
+      {
+        "name": "sun-spin",
+        "value": "60s linear infinite",
+        "purpose": "Sun rays rotation."
+      },
+      {
+        "name": "mascot-bob",
+        "value": "2.4s ease-in-out infinite",
+        "purpose": "Mascot bob, ±6px / ±2deg."
+      },
+      {
+        "name": "jet-stripes",
+        "value": ".5s linear infinite",
+        "purpose": "Water-jet divider stripes."
+      },
+      {
+        "name": "TUNE",
+        "value": "swellSpeed 1.9, swellAmp 0.1, rippleTension 0.24, rippleDamp 0.992, glints 360/130, maxDrops 260/120, leapEvery 0.28, pushRadius 110, seamSpeed 2.2, bubbleDrift 14, baIntro 1.5",
+        "purpose": "JS constants at the top of the script; all canvas/seam/bubble motion runs on one shared rAF loop with IntersectionObserver pausing and a still frame under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-js",
+        "value": "max-width: 699px"
+      },
+      {
+        "name": "sm",
+        "value": "600px"
+      },
+      {
+        "name": "desktop",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold pill for the main action (Call, Email my request); always paired first.",
+      "html": "<a class=\"ds-btn ds-btn-gold\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\"><path d=\"M5 3h3.5l1.8 4.6-2.4 1.6a12 12 0 0 0 6 6l1.6-2.4L20 14.6V18a3 3 0 0 1-3 3A16 16 0 0 1 2 6a3 3 0 0 1 3-3z\"/></svg>Call (732) 344-0712</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--btn-h,58px);padding:0 22px;border-radius:999px;border:3px solid var(--gold,#f9bf00);font:800 1.0625rem/1 var(--font,system-ui,sans-serif);text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,transform .2s cubic-bezier(.2,.8,.2,1);white-space:nowrap}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:3px solid var(--gold,#f9bf00);outline-offset:3px}.ds-btn-gold{background:var(--gold,#f9bf00);color:var(--ink,#10233d);box-shadow:0 10px 22px -10px rgba(249,191,0,.75)}.ds-btn-gold:hover{background:#ffcb1f}.ds-ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Line Button (on dark)",
+      "kind": "button",
+      "refersTo": "button-line-on-dark",
+      "description": "Secondary action on navy grounds; same gold outline and height as the primary.",
+      "html": "<div style=\"background:#0d3b6e;padding:20px\"><a class=\"ds-btn-line\" href=\"#\">Get a free quote</a></div>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 22px;border-radius:999px;border:3px solid #f9bf00;background:transparent;color:#fff;font:800 1.0625rem/1 system-ui,sans-serif;text-decoration:none;transition:background-color .2s,transform .2s cubic-bezier(.2,.8,.2,1)}.ds-btn-line:hover{background:rgba(249,191,0,.14)}.ds-btn-line:active{transform:scale(.97)}.ds-btn-line:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}"
+    },
+    {
+      "name": "Line Button (on light)",
+      "kind": "button",
+      "refersTo": "button-line-on-light",
+      "description": "Secondary action inside .on-light sections: ink text, navy outline.",
+      "html": "<div style=\"background:#fbf6e9;padding:20px\"><button class=\"ds-btn-line-l\">Send as a text</button></div>",
+      "css": ".ds-btn-line-l{display:inline-flex;align-items:center;min-height:58px;padding:0 22px;border-radius:999px;border:3px solid #0d3b6e;background:transparent;color:#10233d;font:800 1.0625rem/1 system-ui,sans-serif;cursor:pointer;transition:background-color .2s,transform .2s cubic-bezier(.2,.8,.2,1)}.ds-btn-line-l:hover{background:#dff1fc}.ds-btn-line-l:active{transform:scale(.97)}.ds-btn-line-l:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}"
+    },
+    {
+      "name": "Service Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Checkbox / radio pill in the quote form; gold when selected.",
+      "html": "<label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Roof</span></label><label class=\"ds-chip\"><input type=\"checkbox\"><span>Driveway</span></label>",
+      "css": ".ds-chip{position:relative;display:inline-block;margin:4px}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip span{display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:#fff;border:2px solid rgba(29,95,163,.25);font:700 .9375rem system-ui,sans-serif;color:#10233d;cursor:pointer;transition:background-color .2s,border-color .2s}.ds-chip input:checked+span{background:#f9bf00;border-color:#f9bf00}.ds-chip input:focus-visible+span{outline:3px solid #1d5fa3;outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labelled quote-form field with water-blue focus.",
+      "html": "<label class=\"ds-label\" for=\"ds-town\">Town <span>(New Jersey)</span></label><input class=\"ds-input\" id=\"ds-town\" placeholder=\"e.g. Toms River\">",
+      "css": ".ds-label{display:block;font:800 1.0625rem system-ui,sans-serif;color:#10233d;margin-bottom:8px}.ds-label span{font-weight:400;color:#34496a}.ds-input{width:100%;min-height:54px;padding:14px 16px;border-radius:16px;border:2px solid rgba(29,95,163,.28);background:#fff;font:400 1.0625rem/1.4 system-ui,sans-serif;color:#10233d}.ds-input::placeholder{color:#5b6f8c}.ds-input:focus{outline:none;border-color:#2a8fd6;box-shadow:0 6px 16px -8px rgba(42,143,214,.6)}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "svc-row",
+      "description": "Full-width tappable service; cue turns gold and spins when added to the quote.",
+      "html": "<div style=\"background:#eef6fc;padding:12px\"><button class=\"ds-row\" aria-pressed=\"true\">Roof Cleaning<span class=\"ds-cue\"><svg viewBox=\"0 0 24 24\"><path d=\"m5 12.5 4.5 4.5L19 7.5\"/></svg></span></button></div>",
+      "css": ".ds-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:60px;padding:12px 4px;border:0;border-bottom:2px solid rgba(29,95,163,.14);background:none;font:700 1.125rem/1.25 system-ui,sans-serif;color:#10233d;text-align:left;cursor:pointer;transition:color .2s}.ds-row:hover{color:#1d5fa3}.ds-row:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}.ds-cue{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#1d5fa3;box-shadow:0 4px 10px -4px rgba(13,59,110,.4)}.ds-row[aria-pressed=true] .ds-cue{background:#f9bf00;color:#10233d}.ds-cue svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "review-card",
+      "description": "The single testimonial: sky-blue card, gold quote mark, pale-gold attribution.",
+      "html": "<figure class=\"ds-review\"><blockquote>Great job, very neat, reasonably priced, and VERY professional!</blockquote><figcaption>John G., Sunny Side customer</figcaption></figure>",
+      "css": ".ds-review{margin:0;padding:26px 22px;border-radius:22px;background:#1d5fa3;color:#fff;box-shadow:0 22px 48px -18px rgba(10,44,82,.55);font-family:system-ui,sans-serif}.ds-review blockquote{margin:0;font-size:1.25rem;line-height:1.45;font-weight:600}.ds-review figcaption{margin-top:14px;color:#fff1bf;font-weight:800}"
+    },
+    {
+      "name": "Photo Bubble",
+      "kind": "custom",
+      "refersTo": "bub",
+      "description": "Job photo inside a shaded water bubble (static preview; live version drifts and is pushed by the pointer).",
+      "html": "<div class=\"ds-bub\"></div>",
+      "css": ".ds-bub{position:relative;width:150px;height:150px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#dff1fc,#57c3f2);box-shadow:0 18px 36px -14px rgba(13,59,110,.5)}.ds-bub::after{content:\"\";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 32%),radial-gradient(circle at 50% 50%,rgba(42,143,214,0) 60%,rgba(42,143,214,.32) 76%,rgba(13,59,110,.6) 100%)}"
+    },
+    {
+      "name": "Sticky Contact Bar",
+      "kind": "nav",
+      "refersTo": "sticky-bar",
+      "description": "Phone-only bottom bar (Call / Free quote) shown once the hero buttons scroll away.",
+      "html": "<nav class=\"ds-bar\"><a class=\"ds-bb ds-bb-g\" href=\"#\">Call</a><a class=\"ds-bb\" href=\"#\">Free quote <span class=\"ds-count\">2</span></a></nav>",
+      "css": ".ds-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px;background:#0a2c52;box-shadow:0 -10px 24px -12px rgba(0,0,0,.45)}.ds-bb{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 12px;border-radius:999px;border:3px solid #f9bf00;color:#fff;font:800 1.0625rem/1 system-ui,sans-serif;text-decoration:none}.ds-bb:hover{background:rgba(249,191,0,.14)}.ds-bb:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}.ds-bb-g{background:#f9bf00;color:#10233d}.ds-bb-g:hover{background:#ffcb1f}.ds-count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#f9bf00;color:#10233d;font-size:.8125rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Morning Sun Over Clean Water",
+    "overview": "The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a running water jet that washes the dirty photo into the clean one, and the job photos float in water bubbles that drift and get pushed aside.\n\nIt is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, the Call and Free quote buttons, and the living water under them. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.\n\nDepth comes from soft shadows tinted navy and from the shading inside water and bubbles, never from hairline highlights. Every moving thing runs on one shared animation loop, pauses when off screen, and stops under reduced motion.",
+    "keyCharacteristics": [
+      "Sky navy and gold on dark sections; cream and mist on light ones; water blues hold them together.",
+      "Heavy uppercase system-font headings (900), plain sentence-case body.",
+      "Pill buttons with a 3px gold outline; the gold and line variants are always the same height.",
+      "One living material (water) carried through the hero, seams, before/after jets, photo bubbles and close.",
+      "Phone first: 58px buttons, a sticky Call / Quote bar, `tel:`/`sms:`/`mailto:` as the main actions."
+    ],
+    "rules": [
+      {
+        "name": "The Never-Black Rule",
+        "body": "No page ground is black or near-black. The darkest surface is Sky Deep. The brand's black stays inside the wordmark artwork only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Is Light Rule",
+        "body": "Gold marks the sun and the next action: primary buttons, selected states, the slider knob, emphasized headline words. Don't use it for large fills or body text on light grounds; gold text belongs on navy only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Seam Fill Rule",
+        "body": "Each wave seam's `data-fill` attribute is the hex of the section *below* it (`#fbf6e9` cream, `#eef6fc` mist, `#0d3b6e` sky navy). If you change a ground token, change the matching `data-fill` values too, or a color step shows under the wave.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shout-and-Talk Rule",
+        "body": "Headings shout (900, uppercase, line-height 1, -0.01em). Everything else talks (sentence case, 400 to 800). Don't uppercase body copy, buttons or chips.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sixteen-Plus Rule",
+        "body": "No reading text below 15px (0.9375rem). Body stays at 17px on phones.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumb Rule",
+        "body": "Primary actions are at least 54px tall (58px standard) and full width on phones; every tap target is at least 44px.",
+        "section": "layout"
+      },
+      {
+        "name": "The Tinted Shadow Rule",
+        "body": "Shadows are navy-tinted, blurred, and spread negative. No hard offset shadows, no neutral grey.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No-Glint Rule",
+        "body": "No thin decorative highlight lines (white arcs, inset top lines on buttons). The only highlight is the soft radial sheen inside the photo bubbles.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** take every color from the `:root` tokens. When changing a ground color, also update the seam `data-fill` hexes and, for water, the JS body gradient in `resize()`.",
+      "**Do** use `.btn` with `.btn-gold` / `.btn-line` for every action, in gold-then-line pairs at the same height (58px; 54px in the sticky bar).",
+      "**Do** put `on-light` on any light-ground section so line buttons flip to Ink.",
+      "**Do** separate every section with an animated wave seam; never a straight color edge.",
+      "**Do** register new motion with `Loop.add` and tune speeds and counts through `TUNE`, keeping phone counts lower.",
+      "**Do** keep touch listeners passive and draggable things on `touch-action: pan-y`.",
+      "**Do** frame photos in the water world (bubbles, jet-washed before/after frames) and route them through `assets/` + `tools/embed.py`.",
+      "**Do** keep navy-tinted, negative-spread shadows (`--shadow-1`, `--shadow-2`)."
+    ],
+    "donts": [
+      "**Don't** use black or near-black grounds; the darkest is Sky Deep (`#0a2c52`).",
+      "**Don't** add thin decorative highlight lines or glints to buttons, bubbles or frames.",
+      "**Don't** use hard offset or grey shadows.",
+      "**Don't** add a second `requestAnimationFrame`, `setInterval` animation, or motion that ignores reduced motion.",
+      "**Don't** set body or chip text below 0.9375rem, or tap targets below 44px.",
+      "**Don't** use gold for text on cream or mist grounds.",
+      "**Don't** add small uppercase labels above headings; the only uppercase small text is the Before / After tag.",
+      "**Don't** make copy-to-clipboard the only way to get information; the Facebook in-app browser may block it."
+    ]
+  }
+}
