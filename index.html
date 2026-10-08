@@ -838,8 +838,9 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
         introT += dt / TUNE.baIntro;
         var e2 = 1 - Math.pow(2, -10 * Math.min(1, introT));
         set(92 - 42 * e2);
-        if (introT >= 1) job.on = false;
+        if (introT >= 1) { job.on = false; job.tick = function(){}; }
       }}, fr);
+      job.on = true; Loop.wake();
     }, {threshold: .45});
     io.observe(fr);
   });
