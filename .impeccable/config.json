@@ -11,6 +11,78 @@
         ],
         "createdAt": "2026-10-08T13:50:57.230Z",
         "reason": "Claude: imgs are lazy-loaded; src is assigned at runtime from <script type=text/plain id=img-*> data blocks (pitch-site build-notes single-file weight recipe)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#2a6db4",
+        "createdAt": "2026-10-08T14:06:49.220Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#38a6e6",
+        "createdAt": "2026-10-08T14:06:49.285Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#74d3f8",
+        "createdAt": "2026-10-08T14:06:49.352Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(10,44,82,.6)",
+        "createdAt": "2026-10-08T14:06:49.417Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(13,59,110,.35)",
+        "createdAt": "2026-10-08T14:06:49.482Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(150,220,255,.85)",
+        "createdAt": "2026-10-08T14:06:49.548Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(16,35,61,.78)",
+        "createdAt": "2026-10-08T14:06:49.615Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255,196,40,.18)",
+        "createdAt": "2026-10-08T14:06:49.682Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255,196,40,0)",
+        "createdAt": "2026-10-08T14:06:49.748Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255,214,90,.55)",
+        "createdAt": "2026-10-08T14:06:49.814Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255,255,255,.9)",
+        "createdAt": "2026-10-08T14:06:49.880Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(255,255,255,.95)",
+        "createdAt": "2026-10-08T14:06:49.946Z",
+        "reason": "Claude: water/sunlight material gradient stop or tinted shadow in the committed world (sun glow, water still, jet stripes, tag scrim); not a palette token"
       }
     ]
   }
