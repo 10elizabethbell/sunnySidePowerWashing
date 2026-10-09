@@ -159,7 +159,7 @@ Depth comes from soft shadows tinted navy and from the shading inside water and 
 - Heavy uppercase system-font headings (900), plain sentence-case body.
 - Pill buttons with a 3px gold outline; the gold and line variants are always the same height.
 - One living material (water) carried through the hero, seams, before/after dividers, photo bubbles and close.
-- Phone first: 58px buttons, the header Call pill, `tel:`/`sms:`/`mailto:` as the main actions.
+- Phone first: 58px buttons, the header Call pill, `tel:` and `sms:` as the main actions (no email buttons; the address appears only in the footer).
 
 ## Colors
 
@@ -227,13 +227,13 @@ The palette is a morning sky and clean water from deep navy to pale mist, with o
 ## Layout
 
 - **Container:** `.wrap`, max 1180px, centered, 16px side gutters on phones and 28px from 600px.
-- **Breakpoints:** 600px (paired hero/close buttons side by side, two-column before/after list, the quote form's send buttons as a 2-up grid with the gold one spanning the full row) and 900px (desktop: bigger header and wordmark, hero split 1.25fr / 0.75fr with the sun on the right, three-column before/after list, services split into list plus a sticky bubble zone, three pillars across, quote section split 0.8fr / 1.2fr with the intro column sticky at 48px from the top beside the form). JS uses a separate `PHONE` flag at `max-width: 699px` for particle counts and for dropping the fifth (desktop-only) bubble.
+- **Breakpoints:** 600px (two-column before/after list, the quote form's two send buttons side by side) and 900px (desktop: bigger header and wordmark, hero split 1.25fr / 0.75fr with the sun on the right, three-column before/after list, services split into list plus a sticky bubble zone, three pillars across, quote section split 0.8fr / 1.2fr with the intro column sticky at 48px from the top beside the form). JS uses a separate `PHONE` flag at `max-width: 699px` for particle counts and for dropping the fifth (desktop-only) bubble.
 - **Section order and grounds:** header (absolute, over the hero) → **Hero** (sky radial) → seam → **Proof** before/after (cream) → seam → **Services** (mist) → seam → **Why + review** (sky navy) → seam → **Quote** (cream) → seam → **Close** (sky radial, mascot, water) → **Footer** (water deep) → sticky **bar** (phones). Dark and light sections alternate. Each dark radial section (hero, close) ends in a water canvas.
 - **Vertical rhythm:** content sections use 72px top and 96px bottom padding; the extra bottom room is where the next seam overlaps. Hero and close start at 84px (110px hero on desktop) to clear the absolute header. Proof starts tight (28px, 40px desktop) because it sits right under the hero's water.
 - **Inner stacks:** 12px between heading and intro and between paired buttons, 22 to 28px between groups, 26 to 36px between pillars.
 - **Anchors:** `scroll-padding-top: 72px`, smooth scrolling (turned off under reduced motion).
 - **Footer** keeps `40px + safe-area` bottom padding on phones.
-- **No sideways scroll at 320px:** long link text (the email address in the footer and the "message ready" panel) wraps with `overflow-wrap:anywhere`.
+- **No sideways scroll at 320px:** long link text (the email address in the footer) wraps with `overflow-wrap:anywhere`.
 
 ### Named Rules
 **The Thumb Rule.** Primary actions are at least 54px tall (58px standard) and full width on phones; every tap target is at least 44px.
@@ -321,7 +321,7 @@ Surface pills, 44px tall, 2px Line border, 700 at 0.9375rem. Selected: gold fill
 - **Error:** the field gets `.bad`. The border goes to Error Border and a bold Error Text message appears below in plain language.
 
 ### Quote builder flow
-Pick services, property, town, details, name, then contact. The draft (services, property and every field) is saved to `sessionStorage` under `sunny-quote` on each input and restored on reload, so a visitor who leaves to call or check a photo doesn't lose it. Validation requires a service or details, plus a phone number (10+ digits) or email. Submitting composes a plain-text message and opens `mailto:` or `sms:`, and reveals a white "Your message is ready" panel (Lift shadow, card radius) with the message in a read-only textarea, a Copy button and plain-text fallback addresses. Clipboard is only a convenience; the text is always visible. Calling is always offered next to it.
+Pick services, property, town, details, name, then contact. The draft (services, property and every field) is saved to `sessionStorage` under `sunny-quote` on each input and restored on reload, so a visitor who leaves to call or check a photo doesn't lose it. Validation requires a service or details, plus a phone number (10+ digits) or email. Submitting composes a plain-text message and opens `sms:`, and reveals a white "Your message is ready" panel (Lift shadow, card radius) with the message in a read-only textarea, a Copy button and the number to text it to. Clipboard is only a convenience; the text is always visible. Calling is always offered next to it.
 
 ### Why pillars and review
 Pillars are a 56px gold icon disc beside a title and soft text. Each disc sits on the `#rays` sun-ray symbol (124px, centered behind it), so each pillar is a small sun. They are stacked on phones and three across from 900px. The review is a Sky Blue card (card radius, Float shadow) with a gold mask-drawn quote mark (`--quote-mark` SVG), the testimonial in 600 weight, and the attribution in Pale Gold 800.

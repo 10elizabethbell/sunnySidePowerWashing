@@ -9,15 +9,15 @@
 2. **Their customers:** New Jersey homeowners and commercial property managers who found Sunny Side through a Facebook contractor-group post or flyer and want a quote for a house wash, roof, driveway, patio, fence or commercial job.
 
 ## Purpose
-Show the owner their own business done better than their current Wix site, and give their customers a way to request a quote without phone tag: pick services, say where, and send it by email or text, or call.
+Show the owner their own business done better than their current Wix site, and give their customers a way to request a quote without phone tag: pick services, say where, and send it as a text, or call.
 
 ## Positioning
 Residential and commercial pressure washing and soft washing across New Jersey. Their own words: "THE GOLD STANDARD IN EXTERIOR CLEANING", "Eco-Friendly Soft Wash Technology", "Fully Insured & Professional", "Experience the quality you can see and the service you can trust" (sunnysidepowerwashing.com, seen 2026-10-08).
 
 ## Capabilities and constraints
 - Primary action: call (732) 344-0712. Whether the number takes texts is unknown, so text is offered as a secondary path only, never the only one.
-- Email: sunnysidepowerwashing.biz@gmail.com.
-- Quote request composed on the page and handed to the visitor's email or SMS app (no backend).
+- Email: sunnysidepowerwashing.biz@gmail.com (shown in the footer only; no email buttons, per Ellie).
+- Quote request composed on the page and handed to the visitor's SMS app (no backend).
 - No prices, hours, owner name, street address or service-town list are published; the page says nothing about them.
 - Must work one-handed on a 360–430px phone on cellular, inside Facebook's in-app browser (no popups, new tabs, or clipboard-only paths).
 

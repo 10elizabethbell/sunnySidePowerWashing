@@ -6,7 +6,7 @@
 - **World:** their own mascot (a sun in sunglasses holding a pressure-wash wand) shining over live water. Sky-navy ground (never black), their wordmark gold `#F9BF00`.
 - **Signature element:** a canvas sheet of water at the foot of the hero and the closing section. Three layered swells plus a ripple field; the sun's glitter path sparkles on the water under the mascot; little spray leaps happen on their own. Sweep a finger or mouse through it and it ripples and throws spray that arcs and splashes back; sparkles get pushed aside and spring back. Wave seams between every section move the same way and bump when you sweep across them.
 - **Sections:** hero (benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured."; no buttons in the hero itself, calls go through the header Call pill) → 3 before/after sliders with a solid water-blue divider whose edge is moving water: the dirty side has a wobbling wet edge with a sheen and spray that gets livelier the faster you drag (sweeps in once on first view; drag sideways, arrow keys work) → "What we wash": their 12 services, each row toggles it into the quote, with job photos floating in water bubbles you can push → "Why Sunny Side?" (their three pillars, their wording) + John G.'s review verbatim → quote builder → close with mascot, name, tagline → footer with phone, email and Facebook
-- **Quote builder** (this is the pitch: their site has no form): service chips synced with the service rows, grouped and named exactly like the list; services picked in the list arrive as just those chips plus "+ Add another service". Home/Business, town, details, name, phone-or-email (required). Composes one message and opens it by email (primary, known channel) or text, plus Call. A "message ready" box with the text and a copy button shows as a fallback for Facebook's in-app browser. The draft survives a webview reload (sessionStorage) after Mail/Messages opens.
+- **Quote builder** (this is the pitch: their site has no form): service chips synced with the service rows, grouped and named exactly like the list; services picked in the list arrive as just those chips plus "+ Add another service". Home/Business, town, details, name, phone-or-email (required). Composes one message and opens it as a text to (732) 344-0712, with Call instead next to it. No email buttons anywhere (Ellie's call); the company email shows only in the footer. A "message ready" box with the text and a copy button shows as a fallback for Facebook's in-app browser. The draft survives a webview reload (sessionStorage) after Messages opens.
 - **Small touches:** gold outline on hover for chips, fields and the service + buttons; a little water spray off the + when a service goes into the quote; sun-ray halos (the hero's own rays) behind the Why icons; footer has their Facebook link.
 - **Phone:** no sticky bottom bar (removed at Ellie's request); the header Call pill is the always-visible call action at the top.
 - **Weight:** 617 KB single file, ~90% images as lazy-loaded WebP data blocks at the end; motion and buttons start before photos arrive. Safe crops are in `assets/`; after swapping one, run `python3 tools/embed.py`.
@@ -16,7 +16,7 @@
 - **Service groups** (Homes / Driveways & outdoors / Commercial) are my grouping of the 12 services listed on their site; the names are theirs, verbatim.
 - **Headline** "Your home, back on the sunny side." is mine. Their own line "The gold standard in exterior cleaning." is used as the closing tagline.
 - **Pillar copy** is lightly trimmed from their site's "Why Sunny Side?" section (third person "we" removed in two places).
-- **Email is the primary quote channel**, text second, because the brief says whether the number takes texts is unknown.
+- **Text is the only quote channel** (email buttons removed at Ellie's request). The brief says it's unknown whether (732) 344-0712 takes texts: if it doesn't, quote requests sent from the form are lost. Confirm with the owner before launch.
 - **Crew photos:** the worker in the gold hoodie appears in their own site photos. I used the back-view shot (no face) in a bubble and skipped the front-facing ones.
 - **Gold** sampled from their wordmark PNG; the navy and water blues are mine.
 
@@ -50,7 +50,7 @@
 
 ## Not verified
 - Real-device touch (tested with simulated touch events in headless Chrome only), and how the water feels at 60fps on an older phone.
-- Real SMS handoff on iOS/Android (`sms:+17323440712?&body=` form) and mailto in the Facebook in-app browser.
+- Real SMS handoff on iOS/Android (`sms:+17323440712?&body=` form) in the Facebook in-app browser.
 - Clipboard copy inside Facebook's in-app browser (fallback text box is always shown).
 - Direction was chosen unattended (no Impeccable concept roll or decision page, per the pitch-site skill), so the contract has no seed key.
 - Headless quirks: tall desktop captures sometimes render blank; they looked right in other captures.
