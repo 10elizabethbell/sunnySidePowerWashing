@@ -141,12 +141,13 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
 .svc-group h3{font-size:1.25rem;color:var(--sky-700);margin-bottom:6px}
 .svc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:60px;padding:12px 4px;border:0;border-bottom:2px solid rgba(29,95,163,.14);background:none;font:700 1.125rem/1.25 var(--font);color:var(--ink);text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:color .2s}
 .svc-row:hover{color:var(--sky-700)}
-.svc-cue{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:50%;background:#fff;color:var(--sky-700);box-shadow:0 4px 10px -4px rgba(13,59,110,.4);transition:background-color .2s,color .2s,transform .3s cubic-bezier(.2,.8,.2,1)}
+.svc-cue{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:50%;background:#fff;color:var(--sky-700);box-shadow:0 4px 10px -4px rgba(13,59,110,.4);transition:background-color .2s,color .2s,box-shadow .2s,transform .3s cubic-bezier(.2,.8,.2,1)}
 .svc-cue .ico{width:20px;height:20px}
 .svc-cue .chk{display:none}
 .svc-row[aria-pressed="true"] .svc-cue{background:var(--gold);color:var(--ink);transform:rotate(360deg)}
 .svc-row[aria-pressed="true"] .svc-cue .plus{display:none}
 .svc-row[aria-pressed="true"] .svc-cue .chk{display:block}
+@media (hover:hover){.svc-row:hover .svc-cue{box-shadow:0 0 0 2px var(--gold),0 4px 10px -4px rgba(13,59,110,.4)}}
 .svc-tally{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:8px 8px 8px 20px;border-radius:999px;background:var(--sky-900);color:#fff;font-weight:700}
 .svc-tally .btn{min-height:44px;padding:0 18px;font-size:1rem}
 
