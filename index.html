@@ -152,6 +152,14 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
 @media (hover:hover){.svc-row:hover .svc-cue{box-shadow:0 0 0 2px var(--gold),0 4px 10px -4px rgba(13,59,110,.4)}}
 .svc-tally{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;color:var(--ink);font-weight:700}
 .svc-tally .btn{min-height:44px;padding:0 18px;font-size:1rem}
+/* phones: while you're in the list, Finish quote rides the bottom of the screen; it docks in its spot under the list */
+@media (max-width:899px){
+  .svc-tally{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));z-index:5}
+  .svc-tally .btn{animation:tally-pop .35s cubic-bezier(.2,.8,.2,1)}
+  .svc-tally.stuck [data-tally-text]{display:none}
+  .svc-tally.stuck .btn{flex:1;min-height:54px;box-shadow:0 12px 26px -8px rgba(13,59,110,.55)}
+}
+@keyframes tally-pop{from{transform:translateY(18px);opacity:0}}
 
 /* ============================================================
    WHY + REVIEW
@@ -884,12 +892,16 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
     var list = picked();
     rows.forEach(function(r){ r.setAttribute('aria-pressed', list.indexOf(r.dataset.svc) > -1 ? 'true' : 'false'); });
     tally.hidden = !list.length; tallyText.textContent = list.length + (list.length === 1 ? ' service' : ' services') + ' in your quote';
-   
     if (list.length) form.querySelector('[data-f="svc"]').classList.remove('bad');
     if (!list.length) compact = false;
     chipsBox.classList.toggle('compact', compact); more.hidden = !compact;
   }
   chipsBox.addEventListener('change', sync);
+  // .stuck while the tally is pinned to the screen's foot (its own spot is still further down)
+  var tallyEnd = document.createElement('div'); tallyEnd.setAttribute('aria-hidden', 'true'); tally.after(tallyEnd);
+  new IntersectionObserver(function(es){
+    var e = es[0]; tally.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top > e.rootBounds.bottom);
+  }, {rootMargin: '0px 0px -12px 0px'}).observe(tallyEnd);
 
   var $ = function(id){ return document.getElementById(id); };
   function message(){
