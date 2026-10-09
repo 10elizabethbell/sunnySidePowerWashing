@@ -152,14 +152,18 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
 .svc-row[aria-pressed="true"] .svc-cue .plus{display:none}
 .svc-row[aria-pressed="true"] .svc-cue .chk{display:block}
 @media (hover:hover){.svc-row:hover .svc-cue{box-shadow:0 0 0 2px var(--gold),0 4px 10px -4px rgba(13,59,110,.4)}}
-.svc-tally{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;color:var(--ink);font-weight:700}
-.svc-tally .btn{min-height:44px;padding:0 18px;font-size:1rem}
-/* phones: while you're in the list, Finish quote rides the bottom of the screen; it docks in its spot under the list */
+.svc-list{display:grid;grid-template-columns:1fr auto;column-gap:12px}
+.svc-list>:not(.svc-tally){grid-column:1/-1}
+/* the tally's count and button sit straight in the list's grid, so the button alone can be sticky */
+.svc-tally{display:contents}
+.svc-tally [data-tally-text]{margin-top:22px;align-self:center;color:var(--ink);font-weight:700}
+.svc-tally .btn{margin-top:22px;justify-self:end;min-height:44px;padding:0 18px;font-size:1rem}
+/* phones: while the list is on screen, the button rides the screen foot at its own size and x, and docks in its spot.
+   Only the small button is sticky, and only while the list is in view, so Safari doesn't tint its toolbar gold. */
 @media (max-width:899px){
-  .svc-tally{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));z-index:5}
+  .svc-list.live .svc-tally .btn{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));z-index:5}
   .svc-tally .btn{animation:tally-pop .35s cubic-bezier(.2,.8,.2,1)}
-  .svc-tally.stuck [data-tally-text]{display:none}
-  .svc-tally.stuck .btn{flex:1;min-height:54px;box-shadow:0 12px 26px -8px rgba(13,59,110,.55)}
+  .svc-tally.stuck [data-tally-text]{visibility:hidden}
 }
 @keyframes tally-pop{from{transform:translateY(18px);opacity:0}}
 
@@ -904,6 +908,8 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
   new IntersectionObserver(function(es){
     var e = es[0]; tally.classList.toggle('stuck', !e.isIntersecting && e.boundingClientRect.top > e.rootBounds.bottom);
   }, {rootMargin: '0px 0px -12px 0px'}).observe(tallyEnd);
+  var svcList = tally.parentNode;
+  new IntersectionObserver(function(es){ svcList.classList.toggle('live', es[0].isIntersecting); }).observe(svcList);
 
   var $ = function(id){ return document.getElementById(id); };
   function message(){
