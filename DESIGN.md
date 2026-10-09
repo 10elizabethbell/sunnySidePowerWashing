@@ -144,7 +144,7 @@ Everything lives in one file, `index.html`. Styles are in the main `<style>` blo
 
 **Creative North Star: "Morning Sun Over Clean Water"**
 
-The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a running water jet that washes the dirty photo into the clean one, and the job photos float in water bubbles that drift and get pushed aside.
+The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a solid water-blue line you drag to wipe the dirty photo into the clean one, and the job photos float in water bubbles that drift and get pushed aside.
 
 It is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, the Call and Free quote buttons, and the living water under them. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.
 
@@ -154,7 +154,7 @@ Depth comes from soft shadows tinted navy and from the shading inside water and 
 - Sky navy and gold on dark sections; cream and mist on light ones; water blues hold them together.
 - Heavy uppercase system-font headings (900), plain sentence-case body.
 - Pill buttons with a 3px gold outline; the gold and line variants are always the same height.
-- One living material (water) carried through the hero, seams, before/after jets, photo bubbles and close.
+- One living material (water) carried through the hero, seams, before/after dividers, photo bubbles and close.
 - Phone first: 58px buttons, a sticky Call / Quote bar, `tel:`/`sms:`/`mailto:` as the main actions.
 
 ## Colors
@@ -283,15 +283,15 @@ The header sits absolutely over the hero, 68px tall (84px desktop). On the left 
 | `maxDrops` / `maxDropsPhone` | 260 / 120 | Cap on spray droplets alive at once. |
 | `leapEvery` | 0.28 | Seconds between ambient spray leaps (×1.6 on phones, randomized ±50%). Half the leaps happen under the sun. |
 | `pushRadius` | 110 | Pointer reach in px on sparkles and ripples (×0.8 on phones), and the base reach for pushing bubbles (×0.6 plus the bubble's radius). |
-| `seamSpeed` | 2.2 | Speed of the wave seam lines. |
+| `seamSpeed` | 1.1 | Speed of the wave seam lines. |
 | `bubbleDrift` | 14 | Px the photo bubbles wander around their home spots. |
-| `baIntro` | 1.5 | Seconds for the first water-jet sweep on each before/after. |
+| `baIntro` | 1.5 | Seconds for the first divider sweep on each before/after. |
 
 ### Wave seams
 `<div class="seam" data-seam data-fill="#HEX"><svg></svg></div>` placed between sections, 56px tall (76px desktop), pulled up over the previous section by its own height. JS draws three moving lines from layered sines: a back line (`rgba(87,195,242,.55)`, 5px), a middle line (`#2a8fd6`, 6px) with the next section's color filled beneath it, and a front line (`rgba(116,211,248,.75)`, 4px). Each seam's phase is offset by its index so no two match. Moving the pointer across a seam raises a local wobble that decays. To add a section, add a seam before it with the new ground's hex as `data-fill`.
 
 ### Before / after sliders
-`figure.ba > .ba-frame[data-ba]` holds the after image, then the before image (`.ba-before`, clipped from the right by `--p`), the Before tag (Ink at 78%, white text, left) and After tag (gold, right), and the `.ba-jet` slider. The frame has a 9:8 aspect, card radius, and Float shadow. The jet is a 12px animated stripe of white and pale-blue water scrolling downward (0.5s loop) with a 52px gold knob carrying the swap icon. Interaction: mouse and pen drag at once. Touch only takes over after a clearly sideways drag (more than 8px and more horizontal than vertical), so vertical scrolling still works (`touch-action: pan-y`). A tap with no drag sets the position. Arrow keys move it 4% (10% with Shift), and Home/End go to 0 and 100. On first view (45% visible) the jet sweeps from 84% to 50% over `baIntro` seconds with an ease-out, and stops for good once touched. Image pairs must share the same framing so the divider lines up. Captions are a bold title plus a soft-ink line.
+`figure.ba > .ba-frame[data-ba]` holds the after image, then the before image (`.ba-before`, clipped from the right by `--p`), the Before tag (Ink at 78%, white text, left) and After tag (gold, right), and the `.ba-jet` slider. The frame has a 9:8 aspect, card radius, and Float shadow. The divider is a still 12px Water Deep (`--water-600`) bar with the Float-style navy shadow and a 52px gold knob carrying the swap icon. Interaction: mouse and pen drag at once. Touch only takes over after a clearly sideways drag (more than 8px and more horizontal than vertical), so vertical scrolling still works (`touch-action: pan-y`). A tap with no drag sets the position. Arrow keys move it 4% (10% with Shift), and Home/End go to 0 and 100. On first view (45% visible) the divider sweeps from 84% to 50% over `baIntro` seconds with an ease-out, and stops for good once touched. Image pairs must share the same framing so the divider lines up. Captions are a bold title plus a soft-ink line.
 
 ### Photo bubbles
 `.bubbles[data-bubbles]` contains `.bub` circles, each with an inline `--s` size and `data-x` / `data-y` home positions as fractions of the zone. `data-desk` marks a bubble that is removed on phones. Each bubble has a photo, a soft radial sheen top-left, and a blue rim darkening at the edge (`::after`), plus the Bubble shadow. They drift on per-bubble sine phases, get pushed by the pointer with a spring back (stiffness 38, damping 6.5), and squash slightly in the direction they move. On phones the zone is 300px tall and bleeds to the screen edges. On desktop it is sticky beside the list at 620px with bubbles scaled ×1.6 (`--z`). The zone is decorative (`aria-hidden`) and passes taps through to images.
@@ -318,14 +318,14 @@ Pillars are a 56px gold icon disc beside a title and soft text. They are stacked
 A fixed Sky Deep bar with two equal buttons (gold Call, line Free quote with a gold count badge), 54px tall, padded for the safe area. It slides up (`translateY(110%)` → 0, 0.35s) only when the hero buttons have left the screen and the quote form's send buttons aren't 25% visible. Hidden from 900px.
 
 ### Footer
-The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone and email links (44px targets; middle-dot separators on desktop), and the small Water Pale line "Demo one-pager — free sample."
+The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone, email and Facebook links (44px targets; middle-dot separators on desktop), and the small Water Pale line "Demo one-pager — free sample."
 
 ### Motion system
 - **One shared loop:** `Loop` runs a single `requestAnimationFrame` for every living thing (both water canvases, every seam, the bubbles, the before/after intros). Register new motion with `Loop.add({tick: function(t, dt){...}}, element)`. `t` is seconds and `dt` is clamped to 50ms. Don't start another rAF.
 - **Off-screen pausing:** `Loop.add` attaches an IntersectionObserver (120px margin) that switches each job on only while its element is near the viewport. The loop stops entirely when no job is on and is woken when one comes back.
 - **Shared pointer:** `P` tracks mouse, pen and touch (all passive listeners), with per-frame velocity. All pointer reactions read from it.
 - **Transform-only DOM updates:** bubbles move by `translate3d` and scale. Water draws on canvas. Seams rewrite SVG path data.
-- **Reduced motion:** with `prefers-reduced-motion: reduce`, every job ticks once for a still frame and the loop never runs. Before/after sliders sit at 50% with no intro. CSS kills all animations and transitions (sun spin, mascot bob, jet stripes, bar slide) and smooth scrolling.
+- **Reduced motion:** with `prefers-reduced-motion: reduce`, every job ticks once for a still frame and the loop never runs. Before/after sliders sit at 50% with no intro. CSS kills all animations and transitions (sun spin, mascot bob, bar slide) and smooth scrolling.
 - **Phones get fewer particles** (see TUNE) and the canvas DPR is capped at 2.
 - **Lively, not sleepy:** the swell and seams use three layered sines at different speeds and directions, and the swell amplitude itself breathes over time.
 
@@ -344,7 +344,7 @@ Photos and brand art are embedded so the page is one self-contained file. Source
 - **Do** separate every section with an animated wave seam; never a straight color edge.
 - **Do** register new motion with `Loop.add` and tune speeds and counts through `TUNE`, keeping phone counts lower.
 - **Do** keep touch listeners passive and draggable things on `touch-action: pan-y`.
-- **Do** frame photos in the water world (bubbles, jet-washed before/after frames) and route them through `assets/` + `tools/embed.py`.
+- **Do** frame photos in the water world (bubbles, water-blue before/after dividers) and route them through `assets/` + `tools/embed.py`.
 - **Do** keep navy-tinted, negative-spread shadows (`--shadow-1`, `--shadow-2`).
 
 ### Don't:

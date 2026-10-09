@@ -419,13 +419,8 @@
         "purpose": "Mascot bob, ±6px / ±2deg."
       },
       {
-        "name": "jet-stripes",
-        "value": ".5s linear infinite",
-        "purpose": "Water-jet divider stripes."
-      },
-      {
         "name": "TUNE",
-        "value": "swellSpeed 1.9, swellAmp 0.1, rippleTension 0.24, rippleDamp 0.992, glints 360/130, maxDrops 260/120, leapEvery 0.28, pushRadius 110, seamSpeed 2.2, bubbleDrift 14, baIntro 1.5",
+        "value": "swellSpeed 1.9, swellAmp 0.1, rippleTension 0.24, rippleDamp 0.992, glints 360/130, maxDrops 260/120, leapEvery 0.28, pushRadius 110, seamSpeed 1.1, bubbleDrift 14, baIntro 1.5",
         "purpose": "JS constants at the top of the script; all canvas/seam/bubble motion runs on one shared rAF loop with IntersectionObserver pausing and a still frame under reduced motion."
       }
     ],
@@ -520,12 +515,12 @@
   ],
   "narrative": {
     "northStar": "Morning Sun Over Clean Water",
-    "overview": "The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a running water jet that washes the dirty photo into the clean one, and the job photos float in water bubbles that drift and get pushed aside.\n\nIt is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, the Call and Free quote buttons, and the living water under them. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.\n\nDepth comes from soft shadows tinted navy and from the shading inside water and bubbles, never from hairline highlights. Every moving thing runs on one shared animation loop, pauses when off screen, and stops under reduced motion.",
+    "overview": "The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a solid water-blue line you drag to wipe the dirty photo into the clean one, and the job photos float in water bubbles that drift and get pushed aside.\n\nIt is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, the Call and Free quote buttons, and the living water under them. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.\n\nDepth comes from soft shadows tinted navy and from the shading inside water and bubbles, never from hairline highlights. Every moving thing runs on one shared animation loop, pauses when off screen, and stops under reduced motion.",
     "keyCharacteristics": [
       "Sky navy and gold on dark sections; cream and mist on light ones; water blues hold them together.",
       "Heavy uppercase system-font headings (900), plain sentence-case body.",
       "Pill buttons with a 3px gold outline; the gold and line variants are always the same height.",
-      "One living material (water) carried through the hero, seams, before/after jets, photo bubbles and close.",
+      "One living material (water) carried through the hero, seams, before/after dividers, photo bubbles and close.",
       "Phone first: 58px buttons, a sticky Call / Quote bar, `tel:`/`sms:`/`mailto:` as the main actions."
     ],
     "rules": [
@@ -577,7 +572,7 @@
       "**Do** separate every section with an animated wave seam; never a straight color edge.",
       "**Do** register new motion with `Loop.add` and tune speeds and counts through `TUNE`, keeping phone counts lower.",
       "**Do** keep touch listeners passive and draggable things on `touch-action: pan-y`.",
-      "**Do** frame photos in the water world (bubbles, jet-washed before/after frames) and route them through `assets/` + `tools/embed.py`.",
+      "**Do** frame photos in the water world (bubbles, water-blue before/after dividers) and route them through `assets/` + `tools/embed.py`.",
       "**Do** keep navy-tinted, negative-spread shadows (`--shadow-1`, `--shadow-2`)."
     ],
     "donts": [

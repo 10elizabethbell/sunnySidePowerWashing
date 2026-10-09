@@ -171,6 +171,7 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
    ============================================================ */
 .quote{background:var(--cream);padding:72px 0 96px}
 .quote-intro{margin-top:12px;color:var(--ink-2);max-width:46ch}
+.quote-intro a{padding:12px 0}
 .qform{margin-top:26px;display:grid;gap:22px}
 .field label,.field legend{display:block;font-weight:800;margin-bottom:8px}
 .field .hint{font-weight:400;color:var(--ink-2)}
@@ -274,7 +275,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--water-500);box-shadow
 <!--
 DIRECTION CONTRACT
 THESIS: Sunny Side's own mascot is a sun holding a pressure-wash wand. The page is that sun over clean, moving water: a deep morning sky, gold light, and a live sheet of spray at the foot of every big section.
-OWN-WORLD: Water and sunlight from the job itself. A rolling water surface with the sun's glitter path on it, spray that leaps when you sweep a finger through it, a water-jet divider that "washes" the before photo into the after, photos floating in water bubbles. Gold (#F9BF00) from their wordmark; sky navy ground, never black.
+OWN-WORLD: Water and sunlight from the job itself. A rolling water surface with the sun's glitter path on it, spray that leaps when you sweep a finger through it, a solid water-blue divider that wipes the before photo into the after, photos floating in water bubbles. Gold (#F9BF00) from their wordmark; sky navy ground, never black.
 STORY: Who + where + call (hero) → proof from their own jobs (before/after) → what they wash, tap to build a quote → why them in their own words + John G. → quote request that goes to email or text → close with the mascot, tagline and phone.
 FIRST VIEWPORT: On a 390px phone: wordmark + call, the sun mascot, benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured.", Call and Free quote buttons, and the living water under them.
 FORM: (direction chosen unattended per the pitch-site skill; no Impeccable concept roll, so no seed key) Single file, phone-first layout, system font stack in heavy uppercase display, one shared animation loop (water canvas, wave seams, photo bubbles), sticky Call / Quote bar on phones once the hero buttons scroll away.
@@ -331,7 +332,7 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
   <div class="wrap">
     <div class="proof-head">
       <h2 id="proof-h">Quality you can see.</h2>
-      <p>Real Sunny Side jobs. Drag the water jet across each photo to wash it clean.</p>
+      <p>Real Sunny Side jobs. Drag the line across each photo to see it washed clean.</p>
     </div>
     <div class="ba-list">
       <figure class="ba">
@@ -468,7 +469,7 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
       </div>
       <div class="field" data-f="contact">
         <label for="q-contact">Phone or email to reach you</label>
-        <input id="q-contact" type="text" autocomplete="tel" inputmode="email" aria-describedby="e-contact">
+        <input id="q-contact" type="text" autocomplete="on" inputmode="text" aria-describedby="e-contact">
         <p class="err" id="e-contact">Add a phone number or email so Sunny Side can send your quote.</p>
       </div>
       <div class="send">
@@ -537,7 +538,7 @@ var TUNE = {
   pushRadius: 110,        // finger / mouse reach on sparkles and bubbles
   seamSpeed: 1.1,         // wave seam motion
   bubbleDrift: 14,        // px the photo bubbles wander
-  baIntro: 1.5            // seconds for the first water-jet sweep on each before/after
+  baIntro: 1.5            // seconds for the first divider sweep on each before/after
 };
 
 /* ============================================================
@@ -740,8 +741,10 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
     mid.setAttribute('fill', 'none'); mid.setAttribute('stroke', '#2a8fd6'); mid.setAttribute('stroke-width', '6');
     front.setAttribute('fill', 'none'); front.setAttribute('stroke', 'rgba(116,211,248,.75)'); front.setAttribute('stroke-width', '4');
     svg.append(back, fill, mid, front);
-    function size(){ var r = el.getBoundingClientRect(); W = r.width; H = r.height; svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); }
-    size(); new ResizeObserver(size).observe(el);
+    // page position is cached (re-measured when the seam or the page resizes), so the per-frame tick never reads layout
+    var top = 0, left = 0;
+    function size(){ var r = el.getBoundingClientRect(); W = r.width; H = r.height; top = r.top + scrollY; left = r.left + scrollX; svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); }
+    size(); var ro = new ResizeObserver(size); ro.observe(el); ro.observe(document.body);
     var bump = 0, bumpX = 0, ph = idx * 1.7;
     function line(t, base, amp, k, off){
       var d = '', s = TUNE.seamSpeed;
@@ -753,8 +756,8 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
       return d;
     }
     Loop.add({tick: function(t, dt){
-      var r = el.getBoundingClientRect();
-      if (P.y > r.top - 40 && P.y < r.bottom + 40 && Math.abs(P.vx) + Math.abs(P.vy) > 1) { bumpX = P.x - r.left; bump = Math.min(H * .22, bump + (Math.abs(P.vx) + Math.abs(P.vy)) * .2); }
+      var rt = top - scrollY;
+      if (P.y > rt - 40 && P.y < rt + H + 40 && Math.abs(P.vx) + Math.abs(P.vy) > 1) { bumpX = P.x - (left - scrollX); bump = Math.min(H * .22, bump + (Math.abs(P.vx) + Math.abs(P.vy)) * .2); }
       bump *= Math.pow(.92, dt * 60);
       var a = H * .16;
       back.setAttribute('d', line(t, H * .38, a, 1.1, 2.1));
@@ -827,7 +830,7 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
       else if (k === 'Home') set(0); else if (k === 'End') set(100); else return;
       touched = true; e.preventDefault();
     });
-    // one authored moment: the first time it scrolls into view, the jet washes from the right to center
+    // one authored moment: the first time it scrolls into view, the divider sweeps from the right to center
     set(Loop.reduce ? 50 : 84);
     var io = new IntersectionObserver(function(es){
       if (!es[0].isIntersecting) return; io.disconnect();
