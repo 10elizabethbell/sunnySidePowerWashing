@@ -14,7 +14,7 @@
    TOKENS
    ============================================================ */
 :root{
-  --sky-950:#0a2c52;   /* sticky bar */
+  --sky-950:#0a2c52;   /* deepest navy, the floor of the never-black rule (no current use) */
   --sky-900:#0d3b6e;   /* hero + why + close ground */
   --sky-700:#1d5fa3;
   --water-600:#1a62ad; /* deep water, footer joins it */
@@ -221,21 +221,12 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6p
 .close .area{margin:14px auto 0;color:var(--on-dark-2);max-width:40ch}
 .close-actions{display:grid;gap:12px;max-width:420px;margin:26px auto 0}
 .close .water{height:calc(var(--band) + 120px);margin-top:-40px;--band:120px;z-index:3}
-.foot{background:var(--water-600);color:var(--on-dark);padding:8px 0 calc(110px + env(safe-area-inset-bottom))}
+.foot{background:var(--water-600);color:var(--on-dark);padding:8px 0 calc(40px + env(safe-area-inset-bottom))}
 .foot .wrap{display:grid;gap:14px;justify-items:start}
 .foot a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none}
 .foot a:hover{text-decoration:underline}
 .foot-links{display:flex;flex-wrap:wrap;column-gap:20px}
 .foot-links a,.sent a{min-width:0;overflow-wrap:anywhere}
-
-/* ============================================================
-   STICKY BAR (phones)
-   ============================================================ */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--sky-950);box-shadow:0 -10px 24px -12px rgba(0,0,0,.45);transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.bar.show{transform:none}
-.bar .btn{min-height:54px;padding:0 12px}
-.bar .count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:.8125rem}
-.bar .count[hidden]{display:none}
 
 /* ============================================================
    WIDER SCREENS
@@ -248,8 +239,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6p
   .ba-list{grid-template-columns:1fr 1fr}
 }
 @media (min-width:900px){
-  .bar{display:none}
-  .foot{padding-bottom:40px}
   .top .wrap{height:84px}
   .wordmark{width:210px}
   .top-call .num{display:inline}
@@ -291,8 +280,8 @@ DIRECTION CONTRACT
 THESIS: Sunny Side's own mascot is a sun holding a pressure-wash wand. The page is that sun over clean, moving water: a deep morning sky, gold light, and a live sheet of spray at the foot of every big section.
 OWN-WORLD: Water and sunlight from the job itself. A rolling water surface with the sun's glitter path on it, spray that leaps when you sweep a finger through it, a solid water-blue divider that wipes the before photo into the after, photos floating in water bubbles. Gold (#F9BF00) from their wordmark; sky navy ground, never black.
 STORY: Who + where + call (hero) → proof from their own jobs (before/after) → what they wash, tap to build a quote → why them in their own words + John G. → quote request that goes to email or text → close with the mascot, tagline and phone.
-FIRST VIEWPORT: On a 390px phone: wordmark + call, the sun mascot, benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured.", the living water, and the sticky Call / Free quote bar at the foot of the screen.
-FORM: (direction chosen unattended per the pitch-site skill; no Impeccable concept roll, so no seed key) Single file, phone-first layout, system font stack in heavy uppercase display, one shared animation loop (water canvas, wave seams, photo bubbles), sticky Call / Quote bar on phones once the hero buttons scroll away.
+FIRST VIEWPORT: On a 390px phone: wordmark + call, the sun mascot, benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured.", and the living water.
+FORM: (direction chosen unattended per the pitch-site skill; no Impeccable concept roll, so no seed key) Single file, phone-first layout, system font stack in heavy uppercase display, one shared animation loop (water canvas, wave seams, photo bubbles), header Call pill on phones once the hero buttons scroll away.
 -->
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -528,10 +517,6 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
   </div>
 </footer>
 
-<nav class="bar" data-bar aria-label="Quick contact">
-  <a class="btn btn-gold" href="tel:+17323440712"><svg class="ico"><use href="#i-phone"/></svg>Call</a>
-  <a class="btn btn-line" href="#quote">Free quote <span class="count" data-count hidden>0</span></a>
-</nav>
 
 <script>
 /* ============================================================
@@ -902,13 +887,13 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
       ], {duration: 560 + Math.random() * 220, easing: 'cubic-bezier(.2,.7,.4,1)'}).onfinish = function(){ this.effect.target.remove(); };
     }
   }
-  var tally = document.querySelector('[data-tally]'), tallyText = document.querySelector('[data-tally-text]'), count = document.querySelector('[data-count]');
+  var tally = document.querySelector('[data-tally]'), tallyText = document.querySelector('[data-tally-text]');
   function picked(){ return [].slice.call(chipsBox.querySelectorAll('input:checked')).map(function(i){ return i.value; }); }
   function sync(){
     var list = picked();
     rows.forEach(function(r){ r.setAttribute('aria-pressed', list.indexOf(r.dataset.svc) > -1 ? 'true' : 'false'); });
     tally.hidden = !list.length; tallyText.textContent = list.length + (list.length === 1 ? ' service' : ' services') + ' in your quote';
-    count.hidden = !list.length; count.textContent = list.length;
+   
     if (list.length) form.querySelector('[data-f="svc"]').classList.remove('bad');
     if (!list.length) compact = false;
     chipsBox.classList.toggle('compact', compact); more.hidden = !compact;
@@ -974,17 +959,6 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
     }
   } catch (_) {}
   window.__quote = {message: message, picked: picked};
-})();
-
-/* ============================================================
-   STICKY BAR: always on (phones), hidden over the quote form's own buttons
-   ============================================================ */
-(function(){
-  var bar = document.querySelector('[data-bar]'), quote = document.getElementById('quote');
-  var quoteVis = false;
-  function upd(){ bar.classList.toggle('show', !quoteVis); }
-  upd();
-  new IntersectionObserver(function(es){ quoteVis = es[0].isIntersecting; upd(); }, {threshold: .25}).observe(quote.querySelector('.send'));
 })();
 
 /* ============================================================

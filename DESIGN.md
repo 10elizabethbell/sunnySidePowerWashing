@@ -138,14 +138,11 @@ components:
     textColor: "{colors.on-dark}"
     rounded: "{rounded.card}"
     padding: "26px 22px"
-  sticky-bar:
-    backgroundColor: "{colors.sky-deep}"
-    padding: "10px 12px"
 ---
 
 # Design System: Sunny Side Power Washing
 
-Everything lives in one file, `index.html`. Styles are in the main `<style>` block in labelled sections (TOKENS, BASE, BUTTONS, HEADER, HERO, WAVE SEAMS, PROOF, SERVICES, WHY + REVIEW, QUOTE BUILDER, CLOSE + FOOTER, STICKY BAR, WIDER SCREENS). Behavior is in one `<script>`: a `TUNE` object at the top, then one IIFE per behavior. The CSS custom properties in `:root` are the source of truth for the color hexes in the frontmatter above. Where a value is hard-coded outside `:root` (seam fills, the water gradient in JS, the hero glow), this file says so.
+Everything lives in one file, `index.html`. Styles are in the main `<style>` block in labelled sections (TOKENS, BASE, BUTTONS, HEADER, HERO, WAVE SEAMS, PROOF, SERVICES, WHY + REVIEW, QUOTE BUILDER, CLOSE + FOOTER, WIDER SCREENS). Behavior is in one `<script>`: a `TUNE` object at the top, then one IIFE per behavior. The CSS custom properties in `:root` are the source of truth for the color hexes in the frontmatter above. Where a value is hard-coded outside `:root` (seam fills, the water gradient in JS, the hero glow), this file says so.
 
 ## Overview
 
@@ -153,7 +150,7 @@ Everything lives in one file, `index.html`. Styles are in the main `<style>` blo
 
 The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a still, solid water-blue line you drag to wipe the dirty photo into the clean one, the job photos float in water bubbles that drift and get pushed aside, and adding a service to the quote throws a little spray of droplets.
 
-It is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, and the living water under them; the hero has no buttons of its own, and the sticky Call / Free quote bar sits at the foot of the screen. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.
+It is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, and the living water under them; the hero has no buttons of its own, so the header Call pill is the first-screen call action. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.
 
 Depth comes from soft shadows tinted navy and from the shading inside water and bubbles, never from hairline highlights. Every moving thing runs on one shared animation loop, pauses when off screen, and stops under reduced motion.
 
@@ -162,7 +159,7 @@ Depth comes from soft shadows tinted navy and from the shading inside water and 
 - Heavy uppercase system-font headings (900), plain sentence-case body.
 - Pill buttons with a 3px gold outline; the gold and line variants are always the same height.
 - One living material (water) carried through the hero, seams, before/after dividers, photo bubbles and close.
-- Phone first: 58px buttons, a sticky Call / Quote bar, `tel:`/`sms:`/`mailto:` as the main actions.
+- Phone first: 58px buttons, the header Call pill, `tel:`/`sms:`/`mailto:` as the main actions.
 
 ## Colors
 
@@ -175,7 +172,7 @@ The palette is a morning sky and clean water from deep navy to pale mist, with o
 
 ### Secondary
 - **Sky Navy** (`--sky-900`): the main dark ground (hero, Why, close, the light-section line-button outline). Also the page `theme-color`. The close section's background opens with a 120px linear band of Sky Navy (`linear-gradient(var(--sky-900), transparent 120px)`) over its radial, so the seam above meets the same navy it was filled with.
-- **Sky Deep** (`--sky-950`): the sticky phone bar.
+- **Sky Deep** (`--sky-950`): the deepest navy allowed; no current use, kept as the floor of the Never-Black Rule.
 - **Sky Blue** (`--sky-700`): the review card, service group headings, service-row hover text, the cue icon color, chip focus ring, the "+ Add another service" text button, scrollbar thumb.
 - **Sky Glow** (`#2a6db4`, hard-coded): the bright top of the hero and close radial gradients, where morning light comes in behind the sun.
 
@@ -230,12 +227,12 @@ The palette is a morning sky and clean water from deep navy to pale mist, with o
 ## Layout
 
 - **Container:** `.wrap`, max 1180px, centered, 16px side gutters on phones and 28px from 600px.
-- **Breakpoints:** 600px (paired hero/close buttons side by side, two-column before/after list, the quote form's send buttons as a 2-up grid with the gold one spanning the full row) and 900px (desktop: sticky bar hidden, bigger header and wordmark, hero split 1.25fr / 0.75fr with the sun on the right, three-column before/after list, services split into list plus a sticky bubble zone, three pillars across, quote section split 0.8fr / 1.2fr with the intro column sticky at 48px from the top beside the form). JS uses a separate `PHONE` flag at `max-width: 699px` for particle counts and for dropping the fifth (desktop-only) bubble.
+- **Breakpoints:** 600px (paired hero/close buttons side by side, two-column before/after list, the quote form's send buttons as a 2-up grid with the gold one spanning the full row) and 900px (desktop: bigger header and wordmark, hero split 1.25fr / 0.75fr with the sun on the right, three-column before/after list, services split into list plus a sticky bubble zone, three pillars across, quote section split 0.8fr / 1.2fr with the intro column sticky at 48px from the top beside the form). JS uses a separate `PHONE` flag at `max-width: 699px` for particle counts and for dropping the fifth (desktop-only) bubble.
 - **Section order and grounds:** header (absolute, over the hero) → **Hero** (sky radial) → seam → **Proof** before/after (cream) → seam → **Services** (mist) → seam → **Why + review** (sky navy) → seam → **Quote** (cream) → seam → **Close** (sky radial, mascot, water) → **Footer** (water deep) → sticky **bar** (phones). Dark and light sections alternate. Each dark radial section (hero, close) ends in a water canvas.
 - **Vertical rhythm:** content sections use 72px top and 96px bottom padding; the extra bottom room is where the next seam overlaps. Hero and close start at 84px (110px hero on desktop) to clear the absolute header. Proof starts tight (28px, 40px desktop) because it sits right under the hero's water.
 - **Inner stacks:** 12px between heading and intro and between paired buttons, 22 to 28px between groups, 26 to 36px between pillars.
 - **Anchors:** `scroll-padding-top: 72px`, smooth scrolling (turned off under reduced motion).
-- **Footer** reserves `110px + safe-area` bottom padding on phones so the sticky bar never covers it.
+- **Footer** keeps `40px + safe-area` bottom padding on phones.
 - **No sideways scroll at 320px:** long link text (the email address in the footer and the "message ready" panel) wraps with `overflow-wrap:anywhere`.
 
 ### Named Rules
@@ -252,7 +249,6 @@ A hybrid: grounds are flat, and objects that sit on them (photos, buttons, cards
 - **Bubble** (`0 18px 36px -14px rgba(13,59,110,.5)`): photo bubbles.
 - **Knob** (`0 8px 18px -6px rgba(10,44,82,.6)`): the slider knob. Small cue discs use `0 4px 10px -4px rgba(13,59,110,.4)`.
 - **Divider** (`3px 0 14px rgba(13,59,110,.35)`): the before/after water bar, a soft blurred navy shade to its right.
-- **Bar** (`0 -10px 24px -12px rgba(0,0,0,.45)`): the sticky bar, cast upward.
 
 ### Named Rules
 **The Tinted Shadow Rule.** Shadows are navy-tinted, blurred, and spread negative. No hard offset shadows, no neutral grey.
@@ -310,7 +306,7 @@ The header sits absolutely over the hero, 68px tall (84px desktop). On the left 
 `.bubbles[data-bubbles]` contains `.bub` circles, each with an inline `--s` size and `data-x` / `data-y` home positions as fractions of the zone. `data-desk` marks a bubble that is removed on phones. Each bubble has a photo, a soft radial sheen top-left, and a blue rim darkening at the edge (`::after`), plus the Bubble shadow. They drift on per-bubble sine phases, get pushed by the pointer with a spring back (stiffness 38, damping 6.5), and squash slightly in the direction they move. On phones the zone is 300px tall and bleeds to the screen edges. On desktop it is sticky beside the list at 620px with bubbles scaled ×1.6 (`--z`). The zone is decorative (`aria-hidden`) and passes taps through to images.
 
 ### Service rows and tally
-Services sit in three groups (Homes / Driveways & outdoors / Commercial) under Title headings. Each service is a full-width `button.svc-row[data-svc]` (60px min height, 700 at 1.125rem, 2px Sky Blue at 14% bottom rule) with a 38px Surface circular cue on the right. On mouse hover (`(hover:hover)` only) the row text goes Sky Blue and the cue gets a 2px gold ring. Pressing toggles `aria-pressed`. The cue turns gold, spins 360deg and swaps plus for check. When a row adds a service, 9 small water droplets (`.drop`, 8px white-to-Spray circles) burst up off the cue and fall away over about 0.6 to 0.8s, animated with the Web Animations API and removed when done; skipped under reduced motion. Rows mirror the quote form's checkbox chips; the chip groups and names are generated from the rows, so add a service by adding a row only. Once anything is picked, a tally line appears: the count in Ink text on the page ground, with a "Finish quote" gold button at the right (no container), and the sticky bar's count badge shows the number.
+Services sit in three groups (Homes / Driveways & outdoors / Commercial) under Title headings. Each service is a full-width `button.svc-row[data-svc]` (60px min height, 700 at 1.125rem, 2px Sky Blue at 14% bottom rule) with a 38px Surface circular cue on the right. On mouse hover (`(hover:hover)` only) the row text goes Sky Blue and the cue gets a 2px gold ring. Pressing toggles `aria-pressed`. The cue turns gold, spins 360deg and swaps plus for check. When a row adds a service, 9 small water droplets (`.drop`, 8px white-to-Spray circles) burst up off the cue and fall away over about 0.6 to 0.8s, animated with the Web Animations API and removed when done; skipped under reduced motion. Rows mirror the quote form's checkbox chips; the chip groups and names are generated from the rows, so add a service by adding a row only. Once anything is picked, a tally line appears: the count in Ink text on the page ground, with a "Finish quote" gold button at the right (no container).
 
 ### Chips (quote form)
 Surface pills, 44px tall, 2px Line border, 700 at 0.9375rem. Selected: gold fill and border. Hover (mouse only, `(hover:hover)`): gold border. Keyboard focus: 3px Sky Blue outline. The Property choice uses the same chips as a two-column segmented control.
@@ -329,9 +325,6 @@ Pick services, property, town, details, name, then contact. The draft (services,
 
 ### Why pillars and review
 Pillars are a 56px gold icon disc beside a title and soft text. Each disc sits on the `#rays` sun-ray symbol (124px, centered behind it), so each pillar is a small sun. They are stacked on phones and three across from 900px. The review is a Sky Blue card (card radius, Float shadow) with a gold mask-drawn quote mark (`--quote-mark` SVG), the testimonial in 600 weight, and the attribution in Pale Gold 800.
-
-### Sticky bar (phones)
-A fixed Sky Deep bar with two equal buttons (gold Call, line Free quote with a gold count badge), 54px tall, padded for the safe area. It slides up (`translateY(110%)` → 0, 0.35s) on load, and stays up except while the quote form's send buttons are 25% visible. Hidden from 900px.
 
 ### Footer
 The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone, email and Facebook links (44px targets; middle-dot separators on desktop; long links wrap anywhere so nothing scrolls sideways at 320px).
@@ -358,7 +351,7 @@ Photos and brand art are embedded so the page is one self-contained file. Source
 
 ### Do:
 - **Do** take every color from the `:root` tokens. When changing a ground color, also update the seam `data-fill` hexes and, for water, the JS body gradient in `resize()`.
-- **Do** use `.btn` with `.btn-gold` / `.btn-line` for every action, in gold-then-line pairs at the same height (58px; 54px in the sticky bar).
+- **Do** use `.btn` with `.btn-gold` / `.btn-line` for every action, in gold-then-line pairs at the same height (58px).
 - **Do** put `on-light` on any light-ground section so line buttons flip to Ink.
 - **Do** separate every section with an animated wave seam; never a straight color edge.
 - **Do** register new motion with `Loop.add` and tune speeds and counts through `TUNE`, keeping phone counts lower.

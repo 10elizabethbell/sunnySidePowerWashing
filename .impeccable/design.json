@@ -426,11 +426,6 @@
         "purpose": "Service-row cue discs."
       },
       {
-        "name": "bar",
-        "value": "0 -10px 24px -12px rgba(0,0,0,.45)",
-        "purpose": "Sticky bar, cast upward."
-      },
-      {
         "name": "hover-ring",
         "value": "0 0 0 2px var(--gold), 0 4px 10px -4px rgba(13,59,110,.4)",
         "purpose": "Service cue on mouse hover, (hover:hover) only."
@@ -445,17 +440,12 @@
       {
         "name": "ease-out-spring",
         "value": "cubic-bezier(.2,.8,.2,1)",
-        "purpose": "Button press, cue spin, sticky bar slide."
+        "purpose": "Button press, cue spin."
       },
       {
         "name": "state",
         "value": ".2s",
         "purpose": "Color/background/transform transitions on buttons, chips, rows."
-      },
-      {
-        "name": "bar-slide",
-        "value": ".35s",
-        "purpose": "Sticky bar in/out."
       },
       {
         "name": "sun-spin",
@@ -566,14 +556,6 @@
       "description": "Job photo inside a shaded water bubble (static preview; live version drifts and is pushed by the pointer).",
       "html": "<div class=\"ds-bub\"></div>",
       "css": ".ds-bub{position:relative;width:150px;height:150px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#dff1fc,#57c3f2);box-shadow:0 18px 36px -14px rgba(13,59,110,.5)}.ds-bub::after{content:\"\";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 32%),radial-gradient(circle at 50% 50%,rgba(42,143,214,0) 60%,rgba(42,143,214,.32) 76%,rgba(13,59,110,.6) 100%)}"
-    },
-    {
-      "name": "Sticky Contact Bar",
-      "kind": "nav",
-      "refersTo": "sticky-bar",
-      "description": "Phone-only bottom bar (Call / Free quote) shown from load, hidden over the quote form's send buttons.",
-      "html": "<nav class=\"ds-bar\"><a class=\"ds-bb ds-bb-g\" href=\"#\">Call</a><a class=\"ds-bb\" href=\"#\">Free quote <span class=\"ds-count\">2</span></a></nav>",
-      "css": ".ds-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px;background:#0a2c52;box-shadow:0 -10px 24px -12px rgba(0,0,0,.45)}.ds-bb{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 12px;border-radius:999px;border:3px solid #f9bf00;color:#fff;font:800 1.0625rem/1 system-ui,sans-serif;text-decoration:none}.ds-bb:hover{background:rgba(249,191,0,.14)}.ds-bb:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}.ds-bb-g{background:#f9bf00;color:#10233d}.ds-bb-g:hover{background:#ffcb1f}.ds-count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#f9bf00;color:#10233d;font-size:.8125rem}"
     }
   ],
   "narrative": {
@@ -584,7 +566,7 @@
       "Heavy uppercase system-font headings (900), plain sentence-case body.",
       "Pill buttons with a 3px gold outline; the gold and line variants are always the same height.",
       "One living material (water) carried through the hero, seams, before/after dividers, photo bubbles and close.",
-      "Phone first: 58px buttons, a sticky Call / Quote bar, `tel:`/`sms:`/`mailto:` as the main actions."
+      "Phone first: 58px buttons, the header Call pill, `tel:`/`sms:`/`mailto:` as the main actions."
     ],
     "rules": [
       {
@@ -630,7 +612,7 @@
     ],
     "dos": [
       "**Do** take every color from the `:root` tokens. When changing a ground color, also update the seam `data-fill` hexes and, for water, the JS body gradient in `resize()`.",
-      "**Do** use `.btn` with `.btn-gold` / `.btn-line` for every action, in gold-then-line pairs at the same height (58px; 54px in the sticky bar).",
+      "**Do** use `.btn` with `.btn-gold` / `.btn-line` for every action, in gold-then-line pairs at the same height (58px).",
       "**Do** put `on-light` on any light-ground section so line buttons flip to Ink.",
       "**Do** separate every section with an animated wave seam; never a straight color edge.",
       "**Do** register new motion with `Loop.add` and tune speeds and counts through `TUNE`, keeping phone counts lower.",
