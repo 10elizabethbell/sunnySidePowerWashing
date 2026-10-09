@@ -5,17 +5,11 @@
 ## What's built
 - **World:** their own mascot (a sun in sunglasses holding a pressure-wash wand) shining over live water. Sky-navy ground (never black), their wordmark gold `#F9BF00`.
 - **Signature element:** a canvas sheet of water at the foot of the hero and the closing section. Three layered swells plus a ripple field; the sun's glitter path sparkles on the water under the mascot; little spray leaps happen on their own. Sweep a finger or mouse through it and it ripples and throws spray that arcs and splashes back; sparkles get pushed aside and spring back. Wave seams between every section move the same way and bump when you sweep across them.
-- **Sections:** hero (benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured.", Call + Free quote) → 3 before/after sliders with a solid water-blue divider (sweeps in once on first view; drag sideways, arrow keys work) → "What we wash": their 12 services, each row toggles it into the quote, with job photos floating in water bubbles you can push → "Why Sunny Side?" (their three pillars, their wording) + John G.'s review verbatim → quote builder → close with mascot, name, tagline → footer with "Demo one-pager — free sample."
+- **Sections:** hero (benefit headline, "Soft-wash & pressure washing across New Jersey. Fully insured.", Call + Free quote) → 3 before/after sliders with a solid water-blue divider whose edge is moving water: the dirty side has a wobbling wet edge with foam, sheen and spray that gets livelier the faster you drag (sweeps in once on first view; drag sideways, arrow keys work) → "What we wash": their 12 services, each row toggles it into the quote, with job photos floating in water bubbles you can push → "Why Sunny Side?" (their three pillars, their wording) + John G.'s review verbatim → quote builder → close with mascot, name, tagline → footer with "Demo one-pager — free sample."
 - **Quote builder** (this is the pitch: their site has no form): service chips synced with the service rows, grouped and named exactly like the list; services picked in the list arrive as just those chips plus "+ Add another service". Home/Business, town, details, name, phone-or-email (required). Composes one message and opens it by email (primary, known channel) or text, plus Call. A "message ready" box with the text and a copy button shows as a fallback for Facebook's in-app browser. The draft survives a webview reload (sessionStorage) after Mail/Messages opens.
 - **Small touches:** gold outline on hover for chips, fields and the service + buttons; a little water spray off the + when a service goes into the quote; sun-ray halos (the hero's own rays) behind the Why icons; footer has their Facebook link.
 - **Phone:** sticky bottom bar (Call | Free quote with a count of picked services) appears once the hero buttons scroll away and hides over the quote form's own buttons.
-- **Weight:** 641 KB single file, ~90% images as lazy-loaded WebP data blocks at the end; motion and buttons start before photos arrive. Safe crops are in `assets/`; after swapping one, run `python3 tools/embed.py`.
-
-## Overdrive demos (pick one, or neither)
-Both are built into index.html and stay off unless the link has the flag (and always off with reduced motion):
-- **Real wash:** https://10elizabethbell.github.io/sunnySidePowerWashing/?wash — the before photo is drawn on a canvas; the divider's edge is moving water with foam, a wet sheen on the clean side and spray thrown off as you drag.
-- **Wand aims:** https://10elizabethbell.github.io/sunnySidePowerWashing/?wand — the mascot art is split into body + wand (`assets/mascot-nowand.webp`, `assets/wand.webp`); the wand pivots in the fist toward your finger/cursor and hoses an arc that lands and splashes in the hero water (behind the text). Idle, it spritzes every few seconds.
-- Both together: `?wash&wand`. To ship one, drop its flag check in the DEMOS block at the end of the script; to drop both, delete that block, the two demo CSS blocks, and the two wand assets.
+- **Weight:** 617 KB single file, ~90% images as lazy-loaded WebP data blocks at the end; motion and buttons start before photos arrive. Safe crops are in `assets/`; after swapping one, run `python3 tools/embed.py`.
 
 ## Assumptions I made
 - **Brief said no logo/photos; their Wix site had them.** Muse couldn't get direct URLs, but the page HTML lists the owner's uploads (`static.wixstatic.com/media/e77978_*`). I used the logo, wordmark, 3 before/after composites and 5 job photos from there. Raw originals stay in ignored `src-assets/`.
@@ -52,7 +46,7 @@ Both are built into index.html and stay off unless the link has the flag (and al
 - Text-to-book rows (one pre-filled SMS per service) if they confirm texts.
 - `book.html` full booking page with day/time window, same water and seams.
 - QR code on the page for their flyers pointing at the new site (their old site has one).
-- Pointer-follow: let the mascot's wand aim spray toward the finger.
+- Pointer-follow mascot wand (built as a demo on 2026-10-09, tried and removed by Ellie).
 - Copy alternatives for the hero: "Grime off. Shine on." / "The gold standard in exterior cleaning." (their line) as the headline instead.
 
 ## Not verified

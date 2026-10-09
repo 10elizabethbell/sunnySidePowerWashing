@@ -345,13 +345,11 @@ The footer ground is Water Deep, joining the close section's water. It holds the
 - **Phones get fewer particles** (see TUNE) and the canvas DPR is capped at 2.
 - **Lively, not sleepy:** the swell and seams use three layered sines at different speeds and directions, and the swell amplitude itself breathes over time.
 
-### Demo experiments (under review, not part of the system)
-Two features run only when the URL carries a flag, and never under reduced motion. They exist for Ellie to compare against the shipped page. Don't build on them or copy their patterns into new surfaces until one is adopted; if adopted, re-run this document pass.
-- **`?wash`:** each before photo is drawn on a canvas (`.ba-wash`, the `<img>` hidden by `.washing`) with a moving wet edge that wobbles harder the faster you drag, plus foam, a wet sheen running down the washed side, and spray.
-- **`?wand`:** the mascot is split into `mascot-nowand` and a separate `wand` layer (both embedded as `img-*` blocks). The wand pivots in the sun's fist (`transform-origin: 28.57% 43.51%`) toward the pointer, or sweeps lazily when idle, and hoses an arc of spray on a hero canvas (`.wand-spray`) that splashes into the hero water through the water canvas's `_water.surfAt` / `_water.splash` hooks.
+### Wet edge on the before/after sliders
+Each before photo is drawn on a canvas (`.ba-wash`; once the photo has loaded, `.washing` hides the `<img>`) with a moving wet edge at the divider that wobbles harder the faster you drag, plus foam riding the edge, a wet sheen running down the washed side, and spray thrown off as it moves. It reads the slider position from the frame's `_p`. Off under reduced motion, where the plain `<img>` and divider remain.
 
 ### Images and embedding
-Photos and brand art are embedded so the page is one self-contained file. Source WebPs live in `assets/` (photos: crew, deck, walk, fence, house, siding/pavers/dumpster before and after; brand: `wordmark.webp`, `mascot.webp`; demo-only layers: `mascot-nowand.webp`, `wand.webp`). Raw originals stay in the git-ignored `src-assets/`. In the page:
+Photos and brand art are embedded so the page is one self-contained file. Source WebPs live in `assets/` (photos: crew, deck, walk, fence, house, siding/pavers/dumpster before and after; brand: `wordmark.webp`, `mascot.webp`). Raw originals stay in the git-ignored `src-assets/`. In the page:
 - `<img data-img="NAME">` has no `src`. The LAZY PHOTOS script copies the data URI from `<script type="text/plain" id="img-NAME">` once the image is within 800px of the viewport. Those blocks sit between the `<!-- IMAGE-DATA -->` and `<!-- /IMAGE-DATA -->` markers at the end of the file, so buttons and motion work before photos arrive.
 - The wordmark and mascot are CSS variables `--wordmark` and `--mascot` in `<style id="brand-art">` at the top of `<head>`.
 - **To swap or add an image:** drop a `.webp` in `assets/` (named to match `data-img` / the `img-NAME` id) and run `python3 tools/embed.py`. It rewrites both the brand-art block and the IMAGE-DATA blocks from `assets/`. Never paste base64 by hand. Keep photos around 20 to 60 KB each.
@@ -379,4 +377,3 @@ Photos and brand art are embedded so the page is one self-contained file. Source
 - **Don't** use gold for text on cream or mist grounds.
 - **Don't** add small uppercase labels above headings; the only uppercase small text is the Before / After tag.
 - **Don't** make copy-to-clipboard the only way to get information; the Facebook in-app browser may block it.
-- **Don't** treat the `?wash` / `?wand` demos as system parts; they are experiments behind URL flags.

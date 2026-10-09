@@ -492,18 +492,7 @@
         "value": "900px"
       }
     ],
-    "experiments": [
-      {
-        "name": "?wash",
-        "status": "under review",
-        "description": "Before photo drawn on a canvas (.ba-wash) with a moving wet edge, foam, sheen and spray. URL flag only; off under reduced motion."
-      },
-      {
-        "name": "?wand",
-        "status": "under review",
-        "description": "Mascot split into mascot-nowand + wand layers; wand pivots in the fist (transform-origin 28.57% 43.51%) toward the pointer and hoses an arc that splashes into the hero water via _water.surfAt / _water.splash. URL flag only; off under reduced motion."
-      }
-    ]
+    "wetEdge": "Before photo drawn on a canvas (.ba-wash) with a moving wet edge, foam, sheen and spray that react to drag speed; off under reduced motion."
   },
   "components": [
     {
@@ -659,8 +648,7 @@
       "**Don't** set body or chip text below 0.9375rem, or tap targets below 44px.",
       "**Don't** use gold for text on cream or mist grounds.",
       "**Don't** add small uppercase labels above headings; the only uppercase small text is the Before / After tag.",
-      "**Don't** make copy-to-clipboard the only way to get information; the Facebook in-app browser may block it.",
-      "**Don't** treat the `?wash` / `?wand` demos as system parts; they are experiments behind URL flags."
+      "**Don't** make copy-to-clipboard the only way to get information; the Facebook in-app browser may block it."
     ]
   }
 }
