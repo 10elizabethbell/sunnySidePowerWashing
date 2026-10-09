@@ -113,6 +113,12 @@
         "value": ".8125rem",
         "createdAt": "2026-10-08T23:20:48.244Z",
         "reason": "Claude: documented in DESIGN.md Typography hierarchy prose (button/label/row/close-name steps); sidecar ramp just doesn't list it"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.5rem",
+        "createdAt": "2026-10-09T01:01:24.405Z",
+        "reason": "Claude: desktop testimonial size, documented in DESIGN.md Typography (Quote, 1.5rem from 900px)"
       }
     ]
   }
