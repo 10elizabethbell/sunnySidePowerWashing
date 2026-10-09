@@ -1053,9 +1053,6 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
         ctx.fillStyle = wg; ctx.beginPath(); ctx.moveTo(edge(0), 0);
         for (y = 0; y <= H + 6; y += 6) ctx.lineTo(edge(y), y);
         ctx.lineTo(X + 56, H); ctx.lineTo(X + 56, 0); ctx.closePath(); ctx.fill();
-        // foam bubbles riding the edge
-        ctx.fillStyle = 'rgba(245,252,255,.85)';
-        for (var b = 0; b < H; b += 7) { ctx.beginPath(); ctx.arc(edge(b) - 7 + Math.sin(b * 1.7 + t * 5) * 4, b, 1.2 + (b * 7 % 5) * .4 * (.6 + .4 * Math.sin(t * 4 + b)), 0, 7); ctx.fill(); }
         // spray thrown off the moving edge
         for (var i = drops.length - 1; i >= 0; i--) {
           var p = drops[i]; p.vy += .35 * f; p.x += p.vx * f; p.y += p.vy * f; p.life -= dt * 1.6;

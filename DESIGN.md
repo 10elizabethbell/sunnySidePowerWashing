@@ -346,7 +346,7 @@ The footer ground is Water Deep, joining the close section's water. It holds the
 - **Lively, not sleepy:** the swell and seams use three layered sines at different speeds and directions, and the swell amplitude itself breathes over time.
 
 ### Wet edge on the before/after sliders
-Each before photo is drawn on a canvas (`.ba-wash`; once the photo has loaded, `.washing` hides the `<img>`) with a moving wet edge at the divider that wobbles harder the faster you drag, plus foam riding the edge, a wet sheen running down the washed side, and spray thrown off as it moves. It reads the slider position from the frame's `_p`. Off under reduced motion, where the plain `<img>` and divider remain.
+Each before photo is drawn on a canvas (`.ba-wash`; once the photo has loaded, `.washing` hides the `<img>`) with a moving wet edge at the divider that wobbles harder the faster you drag, plus a wet sheen running down the washed side, and spray thrown off as it moves. It reads the slider position from the frame's `_p`. Off under reduced motion, where the plain `<img>` and divider remain.
 
 ### Images and embedding
 Photos and brand art are embedded so the page is one self-contained file. Source WebPs live in `assets/` (photos: crew, deck, walk, fence, house, siding/pavers/dumpster before and after; brand: `wordmark.webp`, `mascot.webp`). Raw originals stay in the git-ignored `src-assets/`. In the page:
