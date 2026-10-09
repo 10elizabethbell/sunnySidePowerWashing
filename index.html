@@ -73,7 +73,7 @@ p{margin:0}
    ============================================================ */
 .top{position:absolute;inset:0 0 auto;z-index:5}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.wordmark{display:block;width:152px;aspect-ratio:440/82;background:var(--wordmark) no-repeat center/contain}
+.wordmark{display:block;width:176px;aspect-ratio:440/82;background:var(--wordmark) no-repeat center/contain}
 a.wordmark{min-height:44px;aspect-ratio:auto}
 .top-call{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.1);color:var(--on-dark);font-weight:800;text-decoration:none}
 .top-call:hover{background:rgba(255,255,255,.18)}
@@ -156,8 +156,9 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
    ============================================================ */
 .why{position:relative;background:var(--sky-900);color:var(--on-dark);padding:72px 0 96px}
 .pillars{display:grid;gap:26px;margin-top:28px;padding:0;list-style:none}
-.pillar{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
-.pillar-ico{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink)}
+.pillar{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start}
+.pillar-ico{position:relative;isolation:isolate;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink)}
+.pillar-ico::before{content:"";position:absolute;inset:-14px;z-index:-1;border-radius:50%;background:repeating-conic-gradient(from 6deg,var(--gold) 0 7deg,transparent 7deg 30deg);opacity:.35;-webkit-mask:radial-gradient(circle,#000 45%,transparent 72%);mask:radial-gradient(circle,#000 45%,transparent 72%)}
 .pillar-ico .ico{width:28px;height:28px}
 .pillar h3{font-size:1.25rem;line-height:1.15}
 .pillar p{margin-top:6px;color:var(--on-dark-2);max-width:56ch}
@@ -178,6 +179,11 @@ a.wordmark{min-height:44px;aspect-ratio:auto}
 .field .hint{font-weight:400;color:var(--ink-2)}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip-group+.chip-group{margin-top:14px}
+.chip-group-h{margin-bottom:6px;color:var(--ink-2);font-size:.9375rem;font-weight:700}
+.compact .chip-group:not(:has(input:checked)),.compact .chip:not(:has(input:checked)){display:none}
+.chip-more{margin-top:12px;min-height:44px;padding:0 4px;border:0;background:none;font:800 1rem var(--font);color:var(--sky-700);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.drop{position:fixed;z-index:60;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,var(--water-300) 70%);pointer-events:none}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;width:1px;height:1px}
 .chip span{display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:#fff;border:2px solid rgba(29,95,163,.25);font-weight:700;font-size:.9375rem;cursor:pointer;transition:background-color .2s,border-color .2s}
@@ -205,10 +211,10 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6p
 /* ============================================================
    CLOSE + FOOTER
    ============================================================ */
-.close{position:relative;background:radial-gradient(110% 60% at 50% 0%,#2a6db4 0%,var(--sky-900) 62%);color:var(--on-dark);padding:84px 0 0;text-align:center;overflow:hidden;isolation:isolate}
+.close{position:relative;background:linear-gradient(var(--sky-900),transparent 120px),radial-gradient(110% 60% at 50% 0%,#2a6db4 0%,var(--sky-900) 62%);color:var(--on-dark);padding:84px 0 0;text-align:center;overflow:hidden;isolation:isolate}
 .close .sun{float:none;margin:0 auto 18px;width:150px;height:162px}
 .close h2{font-size:clamp(2.1rem,9vw,4.25rem)}
-.close .tag{margin-top:12px;color:var(--gold);font-weight:800;font-size:1.125rem}
+.close .tag{margin-top:12px;color:var(--gold);font-weight:800;font-size:1.25rem}
 .close .area{margin:14px auto 0;color:var(--on-dark-2);max-width:40ch}
 .close-actions{display:grid;gap:12px;max-width:420px;margin:26px auto 0}
 .close .water{height:calc(var(--band) + 120px);margin-top:-40px;--band:120px;z-index:3}
@@ -217,6 +223,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6p
 .foot a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none}
 .foot a:hover{text-decoration:underline}
 .foot-links{display:flex;flex-wrap:wrap;column-gap:20px}
+.foot-links a,.sent a{min-width:0;overflow-wrap:anywhere}
 .foot small{color:var(--water-100);font-size:.9375rem}
 
 /* ============================================================
@@ -258,9 +265,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6p
   .bubbles{order:2;position:sticky;top:90px;height:620px;margin:0}
   .bub{--z:1.6}
   .pillars{grid-template-columns:repeat(3,1fr);gap:36px}
+  .pillar h3{font-size:1.5rem}
   .review{max-width:820px;margin-left:auto;margin-right:auto;padding:36px 40px}
   .review blockquote{font-size:1.5rem}
   .quote .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .quote .wrap>div:first-child{position:sticky;top:48px}
   .qform{margin-top:0}
   .close .sun{width:200px;height:216px}
   .close .water{--band:170px}
@@ -448,7 +457,8 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
     <form class="qform" data-quote novalidate>
       <fieldset class="field" data-f="svc">
         <legend>What needs washing?</legend>
-        <div class="chips" data-chips></div>
+        <div class="chip-groups" data-chips></div>
+        <button class="chip-more" type="button" data-more hidden>+ Add another service</button>
         <p class="err" id="e-svc">Pick at least one service, or describe the job below.</p>
       </fieldset>
       <fieldset class="field">
@@ -460,19 +470,19 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
       </fieldset>
       <div class="field">
         <label for="q-town">Town <span class="hint">(New Jersey)</span></label>
-        <input id="q-town" type="text" autocomplete="address-level2" placeholder="e.g. Toms River">
+        <input id="q-town" type="text" maxlength="60" autocomplete="address-level2" placeholder="e.g. Toms River">
       </div>
       <div class="field">
         <label for="q-details">Anything we should know? <span class="hint">(optional)</span></label>
-        <textarea id="q-details" placeholder="Size of the house or driveway, two-story, how soon you need it…"></textarea>
+        <textarea id="q-details" maxlength="800" placeholder="Size of the house or driveway, two-story, how soon you need it…"></textarea>
       </div>
       <div class="field">
         <label for="q-name">Your name</label>
-        <input id="q-name" type="text" autocomplete="name">
+        <input id="q-name" type="text" maxlength="80" autocomplete="name">
       </div>
       <div class="field" data-f="contact">
         <label for="q-contact">Phone or email to reach you</label>
-        <input id="q-contact" type="text" autocomplete="on" inputmode="text" aria-describedby="e-contact">
+        <input id="q-contact" type="text" maxlength="120" autocomplete="on" inputmode="text" aria-describedby="e-contact">
         <p class="err" id="e-contact">Add a phone number or email so Sunny Side can send your quote.</p>
       </div>
       <div class="send">
@@ -859,13 +869,40 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
   var BIZ = 'Sunny Side Power Washing', PHONE_NUM = '+17323440712', EMAIL = 'sunnysidepowerwashing.biz@gmail.com';
   var form = document.querySelector('[data-quote]'), chipsBox = form.querySelector('[data-chips]');
   var rows = [].slice.call(document.querySelectorAll('[data-svc]'));
-  rows.forEach(function(row){
-    var name = row.dataset.svc, lab = document.createElement('label'); lab.className = 'chip';
-    lab.innerHTML = '<input type="checkbox" name="svc"><span></span>';
-    lab.querySelector('input').value = name; lab.querySelector('span').textContent = name.replace(' Cleaning', '').replace(' Washing', ' Wash');
-    chipsBox.appendChild(lab);
-    row.addEventListener('click', function(){ var box = chipsBox.querySelector('input[value="' + name + '"]'); box.checked = !box.checked; sync(); });
+  // the form's chips mirror the service list: same groups, same names
+  var compact = false, more = form.querySelector('[data-more]');
+  document.querySelectorAll('.svc-group').forEach(function(g){
+    var grp = document.createElement('div'), h = document.createElement('p'), box = document.createElement('div');
+    grp.className = 'chip-group'; h.className = 'chip-group-h'; h.textContent = g.querySelector('h3').textContent; box.className = 'chips';
+    grp.append(h, box); chipsBox.appendChild(grp);
+    g.querySelectorAll('[data-svc]').forEach(function(row){
+      var name = row.dataset.svc, lab = document.createElement('label'); lab.className = 'chip';
+      lab.innerHTML = '<input type="checkbox" name="svc"><span></span>';
+      lab.querySelector('input').value = name; lab.querySelector('span').textContent = name;
+      box.appendChild(lab);
+      row.addEventListener('click', function(){
+        var input = chipsBox.querySelector('input[value="' + name + '"]'); input.checked = !input.checked;
+        compact = true; if (input.checked) splash(row.querySelector('.svc-cue')); sync(); save();
+      });
+    });
   });
+  // services picked up in the list arrive as just those chips; the full set is one tap away
+  more.addEventListener('click', function(){ compact = false; sync(); var next = chipsBox.querySelector('input:not(:checked)'); if (next) next.focus(); });
+  // a little spray off the cue when a service goes into the quote
+  function splash(el){
+    if (Loop.reduce || !el.animate) return;
+    var r = el.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    for (var i = 0; i < 9; i++) {
+      var d = document.createElement('i'), a = -Math.PI / 2 + (Math.random() - .5) * 2.4, v = 22 + Math.random() * 30;
+      var dx = Math.cos(a) * v, dy = Math.sin(a) * v;
+      d.className = 'drop'; d.style.left = cx + 'px'; d.style.top = cy + 'px'; document.body.appendChild(d);
+      d.animate([
+        {transform: 'translate(0,0) scale(1)', opacity: 1},
+        {transform: 'translate(' + (dx * .6) + 'px,' + dy + 'px) scale(.85)', opacity: 1, offset: .45},
+        {transform: 'translate(' + dx + 'px,' + (dy * .2 + 26) + 'px) scale(.4)', opacity: 0}
+      ], {duration: 560 + Math.random() * 220, easing: 'cubic-bezier(.2,.7,.4,1)'}).onfinish = function(){ this.effect.target.remove(); };
+    }
+  }
   var tally = document.querySelector('[data-tally]'), tallyText = document.querySelector('[data-tally-text]'), count = document.querySelector('[data-count]');
   function picked(){ return [].slice.call(chipsBox.querySelectorAll('input:checked')).map(function(i){ return i.value; }); }
   function sync(){
@@ -874,6 +911,8 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
     tally.hidden = !list.length; tallyText.textContent = list.length + (list.length === 1 ? ' service' : ' services') + ' in your quote';
     count.hidden = !list.length; count.textContent = list.length;
     if (list.length) form.querySelector('[data-f="svc"]').classList.remove('bad');
+    if (!list.length) compact = false;
+    chipsBox.classList.toggle('compact', compact); more.hidden = !compact;
   }
   chipsBox.addEventListener('change', sync);
 
@@ -911,11 +950,30 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
   form.querySelector('[data-copy]').addEventListener('click', function(){
     var ta = form.querySelector('[data-msg]'), btn = this;
     ta.select();
-    var done = function(){ btn.textContent = 'Copied'; };
+    var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy message'; }, 2400); };
     if (navigator.clipboard) navigator.clipboard.writeText(ta.value).then(done, function(){ try { document.execCommand('copy'); done(); } catch (_) {} });
     else { try { document.execCommand('copy'); done(); } catch (_) {} }
   });
   form.addEventListener('input', function(e){ var f = e.target.closest('.field'); if (f) f.classList.remove('bad'); });
+  // keep a draft for this tab, so a webview reload after Mail or Messages opens doesn't wipe the form
+  var KEY = 'sunny-quote', FIELDS = ['q-town', 'q-details', 'q-name', 'q-contact'];
+  function save(){
+    try {
+      var d = {svc: picked(), prop: form.querySelector('input[name=prop]:checked').value};
+      FIELDS.forEach(function(id){ d[id] = $(id).value; });
+      sessionStorage.setItem(KEY, JSON.stringify(d));
+    } catch (_) {}
+  }
+  form.addEventListener('input', save); form.addEventListener('change', save);
+  try {
+    var d = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+    if (d) {
+      (d.svc || []).forEach(function(n){ var i = chipsBox.querySelector('input[value="' + n + '"]'); if (i) i.checked = true; });
+      var pr = form.querySelector('input[name=prop][value="' + d.prop + '"]'); if (pr) pr.checked = true;
+      FIELDS.forEach(function(id){ if (typeof d[id] === 'string') $(id).value = d[id]; });
+      compact = !!(d.svc && d.svc.length); sync();
+    }
+  } catch (_) {}
   window.__quote = {message: message, picked: picked};
 })();
 
