@@ -334,7 +334,7 @@ Pillars are a 56px gold icon disc beside a title and soft text. Each disc sits o
 A fixed Sky Deep bar with two equal buttons (gold Call, line Free quote with a gold count badge), 54px tall, padded for the safe area. It slides up (`translateY(110%)` → 0, 0.35s) only when the hero buttons have left the screen and the quote form's send buttons aren't 25% visible. Hidden from 900px.
 
 ### Footer
-The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone, email and Facebook links (44px targets; middle-dot separators on desktop; long links wrap anywhere so nothing scrolls sideways at 320px), and the small Water Pale line "Demo one-pager — free sample."
+The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone, email and Facebook links (44px targets; middle-dot separators on desktop; long links wrap anywhere so nothing scrolls sideways at 320px).
 
 ### Motion system
 - **One shared loop:** `Loop` runs a single `requestAnimationFrame` for every living thing (both water canvases, every seam, the bubbles, the before/after intros). Register new motion with `Loop.add({tick: function(t, dt){...}}, element)`. `t` is seconds and `dt` is clamped to 50ms. Don't start another rAF.
