@@ -173,7 +173,7 @@ The palette is a morning sky and clean water from deep navy to pale mist, with o
 - **Sky Glow** (`#2a6db4`, hard-coded): the bright top of the hero and close radial gradients, where morning light comes in behind the sun.
 
 ### Tertiary (water)
-- **Water** (`--water-500`): the middle seam line, input focus border, caret color.
+- **Water** (`--water-500`): the middle seam line, caret color.
 - **Water Deep** (`--water-600`): the bottom of the water body; the footer ground is this exact color, so the close section's water flows straight into the footer.
 - **Spray** (`--water-300`): the value behind the seam's back line (`rgba(87,195,242,.55)`). The front seam line and the water surface top use the lighter `#74d3f8`.
 - **Water Pale** (`--water-100`): placeholder fill behind photos while they load, line-button hover on light grounds, footer small text.
@@ -305,7 +305,8 @@ White pills, 44px tall, 2px border in Sky Blue at 25%, 700 at 0.9375rem. Selecte
 ### Inputs / Fields
 - **Style:** white fill, 2px border in Sky Blue at 28%, 16px radius, 54px min height (textarea 110px), body type.
 - **Labels:** 800-weight block labels above, with optional soft-ink 400 hints in parentheses.
-- **Focus:** border goes to Water with a soft blue under-glow (`0 6px 16px -8px rgba(42,143,214,.6)`). No outline.
+- **Hover** (mouse only): border goes to Sunny Gold.
+- **Focus:** border goes to Sunny Gold with a soft gold under-glow (`0 6px 16px -8px rgba(249,191,0,.75)`). No outline. Quote chips also take a gold border on hover.
 - **Error:** the field gets `.bad`. The border goes to Error Border and a bold Error Text message appears below in plain language.
 
 ### Quote builder flow

@@ -184,10 +184,11 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 @media (hover:hover){.chip span:hover{border-color:var(--gold)}}
 .chip input:focus-visible+span{outline:3px solid var(--sky-700);outline-offset:2px}
 .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-input[type=text],input[type=tel],textarea{width:100%;min-height:54px;padding:14px 16px;border-radius:16px;border:2px solid rgba(29,95,163,.28);background:#fff;font:400 1.0625rem/1.4 var(--font);color:var(--ink)}
+input[type=text],input[type=tel],textarea{width:100%;min-height:54px;padding:14px 16px;border-radius:16px;border:2px solid rgba(29,95,163,.28);background:#fff;font:400 1.0625rem/1.4 var(--font);color:var(--ink);transition:border-color .2s,box-shadow .2s}
 textarea{min-height:110px;resize:vertical}
 input::placeholder,textarea::placeholder{color:#5b6f8c}
-input:focus,textarea:focus{outline:none;border-color:var(--water-500);box-shadow:0 6px 16px -8px rgba(42,143,214,.6)}
+@media (hover:hover){input[type=text]:hover,input[type=tel]:hover,textarea:hover{border-color:var(--gold)}}
+input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 6px 16px -8px rgba(249,191,0,.75)}
 .err{display:none;margin-top:8px;color:#a3261b;font-weight:700}
 .field.bad .err{display:block}
 .field.bad input,.field.bad .chips span{border-color:#c2382b}
