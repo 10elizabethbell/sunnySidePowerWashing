@@ -13,7 +13,6 @@
 
 ## Assumptions I made
 - **Brief said no logo/photos; their Wix site had them.** Muse couldn't get direct URLs, but the page HTML lists the owner's uploads (`static.wixstatic.com/media/e77978_*`). I used the logo, wordmark, 3 before/after composites and 5 job photos from there. Raw originals stay in ignored `src-assets/`.
-- **Before/after captions** ("Green mildew off the vinyl", "Moss out of the joints, the red back in the brick", "Stained walls and pad, cleared and washed") describe what the photos show; the owner didn't write them.
 - **Service groups** (Homes / Driveways & outdoors / Commercial) are my grouping of the 12 services listed on their site; the names are theirs, verbatim.
 - **Headline** "Your home, back on the sunny side." is mine. Their own line "The gold standard in exterior cleaning." is used as the closing tagline.
 - **Pillar copy** is lightly trimmed from their site's "Why Sunny Side?" section (third person "we" removed in two places).
