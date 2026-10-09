@@ -119,6 +119,48 @@
         "value": "1.5rem",
         "createdAt": "2026-10-09T01:01:24.405Z",
         "reason": "Claude: desktop testimonial size, documented in DESIGN.md Typography (Quote, 1.5rem from 900px)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "roboto",
+        "createdAt": "2026-10-09T01:40:13.974Z",
+        "reason": "Claude: Roboto is only the Android fallback in the deliberate system font stack (DESIGN.md Typography, Ellie's house style)"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-09T01:40:14.072Z",
+        "reason": "Claude: cream #fbf6e9 is the documented sunlit light-section ground (DESIGN.md Colors > Neutral)"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-09T01:40:14.179Z",
+        "reason": "Claude: offset, negative-spread Gold glow on gold buttons and navy Float/Knob shadows, documented in DESIGN.md Shadow Vocabulary; not zero-offset halos"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-09T01:40:14.275Z",
+        "reason": "Claude: detector skips clamp() display sizes; real ramp 78/68/56/24/20/17px (critique B, 2026-10-09)"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-09T01:40:14.384Z",
+        "reason": "Claude: detector assumes the #2a6db4 glow stop; pixel sampling at 390/1440 shows text sits on #0d3b6e navy (6.7-8.2:1). Re-check contrast by screenshot when changing hero/close"
       }
     ]
   }
