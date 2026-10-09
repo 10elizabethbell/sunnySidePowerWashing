@@ -345,6 +345,7 @@ Each before photo is drawn on a canvas (`.ba-wash`; once the photo has loaded, `
 Photos and brand art are embedded so the page is one self-contained file. Source WebPs live in `assets/` (photos: crew, deck, walk, fence, house, siding/pavers/dumpster before and after; brand: `wordmark.webp`, `mascot.webp`). Raw originals stay in the git-ignored `src-assets/`. In the page:
 - `<img data-img="NAME">` has no `src`. The LAZY PHOTOS script copies the data URI from `<script type="text/plain" id="img-NAME">` once the image is within 800px of the viewport. Those blocks sit between the `<!-- IMAGE-DATA -->` and `<!-- /IMAGE-DATA -->` markers at the end of the file, so buttons and motion work before photos arrive.
 - The wordmark and mascot are CSS variables `--wordmark` and `--mascot` in `<style id="brand-art">` at the top of `<head>`.
+- The favicon (`assets/favicon.png`, the mascot at 64px on transparent) and home-screen icon (`assets/apple-touch-icon.png`, the mascot on Sky Navy at 180px) are data-URI `<link>` tags in `<head>`; `tools/embed.py` re-embeds them.
 - **To swap or add an image:** drop a `.webp` in `assets/` (named to match `data-img` / the `img-NAME` id) and run `python3 tools/embed.py`. It rewrites both the brand-art block and the IMAGE-DATA blocks from `assets/`. Never paste base64 by hand. Keep photos around 20 to 60 KB each.
 
 ## Do's and Don'ts
