@@ -53,6 +53,8 @@ a{color:inherit;text-underline-offset:.2em}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px}
 html{scrollbar-color:var(--sky-700) var(--mist)}
 h1,h2,h3{margin:0;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:1;text-wrap:balance}
+p{text-wrap:pretty}
+.tag{text-wrap:balance}
 h2{font-size:clamp(2rem,8vw,3.5rem)}
 p{margin:0}
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 16px}
@@ -422,7 +424,7 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
     <ul class="pillars">
       <li class="pillar">
         <span class="pillar-ico"><svg class="pillar-rays" aria-hidden="true"><use href="#rays"/></svg><svg class="ico"><use href="#i-leaf"/></svg></span>
-        <div><h3>Eco-friendly soft wash</h3><p>No "one size fits all." Specialized low-pressure techniques and biodegradable cleaners protect your landscaping and delicate surfaces while still getting a deep clean.</p></div>
+        <div><h3>Eco-friendly soft wash</h3><p>No “one size fits all.” Specialized low-pressure techniques and biodegradable cleaners protect your landscaping and delicate surfaces while still getting a deep clean.</p></div>
       </li>
       <li class="pillar">
         <span class="pillar-ico"><svg class="pillar-rays" aria-hidden="true"><use href="#rays"/></svg><svg class="ico"><use href="#i-shield"/></svg></span>
@@ -430,7 +432,7 @@ FORM: (direction chosen unattended per the pitch-site skill; no Impeccable conce
       </li>
       <li class="pillar">
         <span class="pillar-ico"><svg class="pillar-rays" aria-hidden="true"><use href="#rays"/></svg><svg class="ico"><use href="#i-sun"/></svg></span>
-        <div><h3>The "Sunny Side" standard</h3><p>Restoring the brilliance to your property is the goal. The quality you can see and the service you can trust.</p></div>
+        <div><h3>The “Sunny Side” standard</h3><p>Restoring the brilliance to your property is the goal. The quality you can see and the service you can trust.</p></div>
       </li>
     </ul>
     <figure class="review">
@@ -718,9 +720,7 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
       }
     }
 
-    box._water = {drops: function(){ return drops.length; }, ripple: function(){ var m = 0; for (var i = 0; i < n; i++) m = Math.max(m, Math.abs(h[i])); return m; }, // read by tests
-      canvas: cv, surfAt: function(x){ return surfAt(x); },
-      splash: function(x, power){ var i = Math.round(x / sp); if (i > 0 && i < n - 1) v[i] += power; if (Math.random() < .35) spawn(x, surfAt(x) - 2, (Math.random() - .5) * 2.4, -(1.4 + Math.random() * 2.6)); }}; // used by the ?wand demo
+    box._water = {drops: function(){ return drops.length; }, ripple: function(){ var m = 0; for (var i = 0; i < n; i++) m = Math.max(m, Math.abs(h[i])); return m; }}; // read by tests
     resize(); box.classList.add('live');
     var ro = new ResizeObserver(function(){ var w = cv.getBoundingClientRect().width; if (Math.abs(w - W) > 1) resize(); });
     ro.observe(cv);
@@ -948,7 +948,7 @@ var PHONE = matchMedia('(max-width: 699px)').matches;
     else { try { document.execCommand('copy'); done(); } catch (_) {} }
   });
   form.addEventListener('input', function(e){ var f = e.target.closest('.field'); if (f) f.classList.remove('bad'); });
-  // keep a draft for this tab, so a webview reload after Mail or Messages opens doesn't wipe the form
+  // keep a draft for this tab, so a webview reload after Messages or a call opens doesn't wipe the form
   var KEY = 'sunny-quote', FIELDS = ['q-town', 'q-details', 'q-name', 'q-contact'];
   function save(){
     try {

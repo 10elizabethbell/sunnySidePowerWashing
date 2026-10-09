@@ -220,6 +220,7 @@ The palette is a morning sky and clean water from deep navy to pale mist, with o
 - **Label** (800, 0.8125rem, letter-spacing 0.04em, uppercase): the Before / After tags only.
 
 ### Named Rules
+**The Clean-Wrap Rule.** Headings use `text-wrap:balance`, as does the close tagline; paragraphs use `text-wrap:pretty`, so no line ends on a lone word. Quotes inside copy are curly (“ ”).
 **The Shout-and-Talk Rule.** Headings shout (900, uppercase, line-height 1, -0.01em). Everything else talks (sentence case, 400 to 800). Don't uppercase body copy, buttons or chips.
 
 **The Sixteen-Plus Rule.** No reading text below 15px (0.9375rem). Body stays at 17px on phones.

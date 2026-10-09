@@ -2,7 +2,7 @@
 
 - **Platform:** web
 - **Stack:** static single-file HTML/CSS/JS (`index.html`), no frameworks, no tracking, system font stack
-- **Status:** free demo one-pager, built to ~60% for a sales pitch
+- **Status:** pitch one-pager for the owner, built to ~60% and refined with Ellie
 
 ## Users
 1. **The owner** of Sunny Side Power Washing (name unknown), who will open the link on a phone, most likely inside Facebook's in-app browser. The page has to sell them within one screen.
