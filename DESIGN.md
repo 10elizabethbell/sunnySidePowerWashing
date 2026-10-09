@@ -153,7 +153,7 @@ Everything lives in one file, `index.html`. Styles are in the main `<style>` blo
 
 The page is the client's own mascot (a sun holding a pressure-wash wand) rising over a deep morning sky, with a live sheet of water at the foot of every big dark section. Gold comes from their wordmark, and the dark ground is sky navy, never black. The water is something you touch: it ripples and throws spray when a finger or mouse sweeps through it, the before/after divider is a still, solid water-blue line you drag to wipe the dirty photo into the clean one, the job photos float in water bubbles that drift and get pushed aside, and adding a service to the quote throws a little spray of droplets.
 
-It is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, the Call and Free quote buttons, and the living water under them. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.
+It is designed at phone width (360 to 430px) first and adapted up. The first phone screen holds the wordmark, a call pill, the sun mascot, the benefit headline, the one-line pitch, and the living water under them; the hero has no buttons of its own, and the sticky Call / Free quote bar sits at the foot of the screen. Type is the system font stack with heavy uppercase headings, which is deliberate: it loads instantly and matches the brand's blocky wordmark. Sections alternate dark sky and light grounds, and animated three-line wave seams join them instead of hard color edges.
 
 Depth comes from soft shadows tinted navy and from the shading inside water and bubbles, never from hairline highlights. Every moving thing runs on one shared animation loop, pauses when off screen, and stops under reduced motion.
 
@@ -331,7 +331,7 @@ Pick services, property, town, details, name, then contact. The draft (services,
 Pillars are a 56px gold icon disc beside a title and soft text. Each disc sits on the `#rays` sun-ray symbol (124px, centered behind it), so each pillar is a small sun. They are stacked on phones and three across from 900px. The review is a Sky Blue card (card radius, Float shadow) with a gold mask-drawn quote mark (`--quote-mark` SVG), the testimonial in 600 weight, and the attribution in Pale Gold 800.
 
 ### Sticky bar (phones)
-A fixed Sky Deep bar with two equal buttons (gold Call, line Free quote with a gold count badge), 54px tall, padded for the safe area. It slides up (`translateY(110%)` → 0, 0.35s) only when the hero buttons have left the screen and the quote form's send buttons aren't 25% visible. Hidden from 900px.
+A fixed Sky Deep bar with two equal buttons (gold Call, line Free quote with a gold count badge), 54px tall, padded for the safe area. It slides up (`translateY(110%)` → 0, 0.35s) on load, and stays up except while the quote form's send buttons are 25% visible. Hidden from 900px.
 
 ### Footer
 The footer ground is Water Deep, joining the close section's water. It holds the wordmark, the phone, email and Facebook links (44px targets; middle-dot separators on desktop; long links wrap anywhere so nothing scrolls sideways at 320px).

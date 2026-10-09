@@ -571,7 +571,7 @@
       "name": "Sticky Contact Bar",
       "kind": "nav",
       "refersTo": "sticky-bar",
-      "description": "Phone-only bottom bar (Call / Free quote) shown once the hero buttons scroll away.",
+      "description": "Phone-only bottom bar (Call / Free quote) shown from load, hidden over the quote form's send buttons.",
       "html": "<nav class=\"ds-bar\"><a class=\"ds-bb ds-bb-g\" href=\"#\">Call</a><a class=\"ds-bb\" href=\"#\">Free quote <span class=\"ds-count\">2</span></a></nav>",
       "css": ".ds-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 12px;background:#0a2c52;box-shadow:0 -10px 24px -12px rgba(0,0,0,.45)}.ds-bb{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 12px;border-radius:999px;border:3px solid #f9bf00;color:#fff;font:800 1.0625rem/1 system-ui,sans-serif;text-decoration:none}.ds-bb:hover{background:rgba(249,191,0,.14)}.ds-bb:focus-visible{outline:3px solid #f9bf00;outline-offset:3px}.ds-bb-g{background:#f9bf00;color:#10233d}.ds-bb-g:hover{background:#ffcb1f}.ds-count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#f9bf00;color:#10233d;font-size:.8125rem}"
     }
